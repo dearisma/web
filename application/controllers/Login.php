@@ -91,20 +91,30 @@ class Login extends CI_Controller {
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password')
 			);
-			$cek = $this->lm->cek('user', $w)->row();
-			if ($cek != null) {
+	
+			
+			$petugas = $this->lm->cek('user', $w)->row();
+			
+			if ($petugas != null) {
 
 				$array = array(
-					'username' => $cek->username,
-					'password' => $cek->password,
+					'username' => $petugas->username,
+					'password' => $petugas->password,
 					'login' => TRUE,
-					'level' => $cek->id_level,
+					'id_level' => $petugas->id_level,
+					
 				);
-				if($cek->id_level==3){
+				if($petugas->id_level==1){
 
 					$this->session->set_userdata('data_session', $array);
-					redirect('Team/index', 'refresh');
-				}else{
+					redirect('Dokter/index', 'refresh');
+				}else if($petugas->id_level==2){
+					$this->session->set_userdata('data_session', $array);
+					redirect('Petugas/index', 'refresh');
+				}else if($petugas->id_level==3){
+					$this->session->set_userdata('data_session', $array);
+					redirect('Admin/index', 'refresh');
+				}else if($petugas->id_level==4){
 					$this->session->set_userdata('data_session', $array);
 					redirect('Welcome', 'refresh');
 				}

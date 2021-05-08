@@ -149,31 +149,29 @@
 	<!-- //modal -->
 	<!--About-->
 	<div class="about" id="about">
-		<div class="container">
+		<div class="container"><?php
+				foreach ($data_petugas as $pm) {
+					echo'
 			<div class="about-top-grids">
 				<div class="col-md-7 about-top-grid">
-					<h2>Hardono Ananto Hadi</h2>
-					
+				
+					<h2>'. $pm->nama . '</h2>
 					<div class="about-para"><br>
 						<b><p style="text-indent:45px">Head Doctor/Medical</p></b>
-						<p>Tanggal Lahir : Blitar, 01 Januari 1983 </p>
-						<p>Alumni : Universitas Airlangga</p>
-						<p>Seminar and Course : </p>
-					</div>
-					<div class="arrow">
-						<ul>
-							<li><span class="fa fa-paw dog-arrow" aria-hidden="true"></span>
-								<p>VRVC (VPAT Regional Veterinary Congress 2009 , 2010, 2011</p>
-							</li>
-						</ul>
+						<p>Alumni : '. $pm->alumni . '</p>
+						
 					</div>
 				</div>
-				<div class="col-md-5 " >
-				<img src='<?php echo base_url() ?>assets/images/dokter.png' style="width:500px;height:400px">
-					
+				<br>
+					<div class="col-md-5 " >
+					<img style="width: 500px; height:400px;"  src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '" class="rounded-circle"">
+					</div>
+					';
+				}?>
+				
 			</div>
 		</div>
-	</div>
+	</div> 
 	
 	<div class="about" id="about">
 		<div class="container">
