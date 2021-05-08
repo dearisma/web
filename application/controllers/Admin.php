@@ -40,7 +40,7 @@ class Admin extends CI_Controller {
 		$this->load->view('template/header_admin', $data);
 		
 		$this->load->view('template/topbar');
-		$this->load->view('Admin/Petugas', $data);
+		$this->load->view('Admin/index', $data);
 	}
 	
 	public function tambah(){

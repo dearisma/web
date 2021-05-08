@@ -118,7 +118,6 @@ class Login extends CI_Controller {
 					$this->session->set_userdata('data_session', $array);
 					redirect('Welcome', 'refresh');
 				}
-				
 			}else {
 				redirect('Login', 'refresh');
 			}

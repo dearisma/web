@@ -9,11 +9,11 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                
+                         
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Konfirmasi Reservasi Grooming</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Grooming Sekar Satwa</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -21,11 +21,11 @@
                                     <thead>
                                         <tr>
                                             <th>NO</th>
-                                            <th>TANGGAL</th>                                        
+                                            <th>AKSI</th>                                            
+                                            <th>TANGGAL</th>
                                             <th>NAMA PEMILIK</th>
-                                            <th>ALAMAT</th>
-                                            <th>NO TELP</th>
-                                            <th>HEWAN</th>
+                                            
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,10 +36,15 @@
 								$no++;
 								echo '<tr>
 										<td>' . $no . '</td>
+                                        <td><a href="#" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Konfirmasi</span>
+                                    </a> 
 										<td>' . $pm->nama . '</td>
 										<td>' . $pm->alumni . '</td>
-										<td> <img style="width: 200px; height:200px;" src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '"></td>	
-										<td>' . $pm->status . '</td>	
+										
 									  </tr>';
 							}
 							?>
