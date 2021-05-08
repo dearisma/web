@@ -18,11 +18,20 @@ class Team extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+		$this->load->model('Petugas_model', 'pm');
+		// $this->load->model('Petugas_model', 'pm');
+		
+	}
 	public function index()
 	{
-		$this->load->view('template/header');	
-		$this->load->view('user/v_team');
-		$this->load->view('template/footer');	
-		
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		$data['data_petugas'] = $this->pm->getData('petugas')->result();	
+		$this->load->view('template/header', $data);
+		$this->load->view('user/v_team', $data);
 	}
 }

@@ -9,7 +9,7 @@
 									<h4> <span class="home-banner">O</span>ur <span class="home-banner">S</span>ervices <span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span></h4>
-									<p>We have a profesional team</p>
+									<p>We provide reliable veterinary services for your pets</p>
 									<div class="outs_more-buttn">
 									</div>
 								</div>
@@ -155,31 +155,13 @@
 					
 					<div class="about-para"><br>
 						<p style="text-indent:45px">Anda tidak perlu lagi repot dan takut untuk melakukan pet grooming atau perawatan kulit dan bulu hewan kesayangan anda. Kami Klinik Sekar satwa memberikan pelayanan Pet Grooming untuk Mandi Sehat dan mandi Perawatan ( baik untuk mencegah ada Kutu pada bulu ataupun Jamuran pada Kulit ) pada hewan kesayangan anda.</p>
-						<p style="text-indent:45px">Dengan didukung oleh tim ahli dan profesional kami serta ruangan dan peralatan yang memadai, anda tidak akan kecewa dengan pelayanan kami, hewan kesayangan anda akan mendapatkan perawatan  sehingga akan terlihat lebih cantik dan menarik dan tetap dalam kondisi sehat.
-
-Ruang mandi</p>
+						<p style="text-indent:45px">Dengan didukung oleh tim ahli dan profesional kami serta ruangan dan peralatan yang memadai, anda tidak akan kecewa dengan pelayanan kami, hewan kesayangan anda akan mendapatkan perawatan  sehingga akan terlihat lebih cantik dan menarik dan tetap dalam kondisi sehat.</p>
 						
 					</div>
-					<div class="arrow">
-						<ul>
-							<li><span class="fa fa-paw dog-arrow" aria-hidden="true"></span>
-								<p>Opening Hours : 8.00 - 20.00 WIB</p>
-							</li>
-							<li><span><img src='assets/images/fb.png' aria-hidden="true" style="width:20px"></span>
-							<a href="https://www.facebook.com/Klinik-Hewan-Sekar-Satwa-1499028173464825/"><p>Klinik Hewan Sekar Satwa </p>
-							</li>
-							<li><span><img src='assets/images/ig.png' aria-hidden="true" style="width:20px"></span>
-							<a href="https://www.instagram.com/klinikhewansekarsatwa/?hl=id">
-								<p>Klinik Hewan Sekar Satwa </p>
-							</li>
-							<li><span><img src='assets/images/wa.png' aria-hidden="true" style="width:20px"></span>
-								<p>0857-9865-0072 </p>
-							</li>
-							<li><span><img src='assets/images/map.png' aria-hidden="true" style="width:25px"></span>
-							<a href="https://www.google.com/maps/place/Jl.+Melati+No.106,+Kepanjen+Kidul,+Kec.+Kepanjenkidul,+Kota+Blitar,+Jawa+Timur+66117/@-8.1032038,112.1588593,17z/data=!3m1!4b1!4m5!3m4!1s0x2e78ec0e80ee04a1:0xb2a3f11d8ad3b8b0!8m2!3d-8.1032038!4d112.161048"><p>Jln Melati NO 106 Kota Blitar </p>
-							</li>
-						</ul>
-					</div>
+					<div class="outs_more-buttn">
+						<a href="<?= base_url('User/form'); ?>" data-toggle="modal" data-target="#myModal">Reservasi Now</a>
+						</div>
+					
 				</div>
 				<div class="col-md-5 pope banner-agileits-btm" id="video">
 					<div class="button">
@@ -197,6 +179,36 @@ Ruang mandi</p>
 			</div>
 		</div>
 	</div>
+	<div class="about" id="about">
+		<div class="container">
+			<div class="about-top-grids">
+				<div class="col-md-7 about-top-grid">
+					<h2>Penitipan <span class="fa fa-paw" aria-hidden="true"></span></h2>
+					
+					<div class="about-para"><br>
+						<p style="text-indent:45px">Kami menyediakan ruang yang difasilitasi dengan peralatan modern dan higienis yang baik untuk penyakit infeksius maupun non infeksius yang dipantau oleh kamera pengintai. Kami juga memberikan nutrisi yang seimbang untuk hewan peliharaan Anda. Dengan dokter hewan kami, Anda dapat memastikan bahwa hewan peliharaan Anda dirawat bahkan setelah jam operasional klinik.</p>
+						
+					</div>
+					
+					
+				</div>
+				<div class="col-md-5 pope banner-agileits-btm" id="video">
+					<div class="button">
+
+						<a href="#small-dialog1" class="play-icon popup-with-zoom-anim"><span class="fa fa-play-circle" aria-hidden="true"></span></a>
+					</div>
+					<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
+						<div class="agileits_modal_body">
+							<iframe src="https://player.vimeo.com/video/72859932?"></iframe>
+
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	
 
 	<!--js working-->
 	<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
