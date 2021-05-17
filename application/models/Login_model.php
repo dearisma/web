@@ -10,14 +10,24 @@ class Login_model extends CI_Model {
 		$this->db->where($w);
 		return $this->db->get($t);
 	}	
+	public function cek_client($t, $c)
+	{	
+		$this->db->where($c);
+		return $this->db->get($t);
+	}	
+	
+
 	public function petugas($t, $w){		
 		
 		// $this->db->join('petugas', 'petugas.id_petugas = user.id_petugas', 'left');
 		$this->db->join('level', 'level.id_level = user.id_level', 'left');
 		$this->db->where($w);
 		return $this->db->get($t);
-	
-	
+
+	}
+	public function register($t, $data){
+		
+   		return $this->db->insert($t, $data);
 	}
 	
 }
