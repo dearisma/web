@@ -39,46 +39,40 @@ class Login extends CI_Controller {
 		
 	}
 	public function proses_register(){
-    $this->load->library('form_validation');
-    $this->load->library('session');
-
-    $this->form_validation->set_rules('nama', 'Nama', 'required');
-    $this->form_validation->set_rules('username', 'Username', 'required|min_length[5]|max_length[15]|is_unique[users.username]');
-    $this->form_validation->set_rules('password', 'Password', 'required|trim');
-    $this->form_validation->set_rules('no_telp', 'No Telp', 'required');
-    $this->form_validation->set_rules('alamat', 'Alamat', 'required');
-    $this->form_validation->set_rules('id_level', 'Id Level', 'required');
-    
-    if ($this->form_validation->run() == FALSE) {
-        $errors = $this->form_validation->error_array();
-        $this->session->set_flashdata('errors', $errors);
-        $this->session->set_flashdata('input', $this->input->post());
-        redirect('login/register');
-    } else {
+		$this->load->library('form_validation');
+		$this->load->library('session');
+	
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required|trim');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
+		$this->form_validation->set_rules('no_telp', 'No Telp', 'required');
 		
-        $nama = $this->input->post('name');
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $no_telp = $this->input->post('no_telp');
-        $alamat = $this->input->post('alamat');
-		$id_level=$this->input->post('id_level');
-        $pass = password_hash($password, PASSWORD_DEFAULT);
-        $data = [
-			
-            'nama' => $nama,
-            'username' => $username,
-            'password' => $pass,
-            'no_telp' => $no_telp,
-            'alamat' => $alamat,
-            'id_level' => 2
-		];
-        $insert = $this->lm->register("wali_pasien", $data);
-        if($insert){
-            echo '<script>alert("Sukses! Anda berhasil melakukan register. Silahkan login untuk mengakses data.");window.location.href="'.base_url('index.php/auth/login').'";</script>';
-        }else{
-			echo 'eror';
+		if ($this->form_validation->run() == FALSE) {
+			$errors = $this->form_validation->error_array();
+			$this->session->set_flashdata('errors', $errors);
+			$this->session->set_flashdata('input', $this->input->post());
+			redirect('login/register');
+		} else {
+			$nama = $this->input->post('nama');
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$alamat = $this->input->post('alamat');
+			$no_telp = $this->input->post('no_telp');
+			$pass = password_hash($password, PASSWORD_DEFAULT);
+			$data = [
+				'nama' => $nama,
+				'username' => $username,
+				'password' => $pass,
+				'alamat' => $alamat,
+				'no_telp' => $no_telp,
+				'id_level' => 4,
+			];
+			$insert = $this->lm->register("wali_pasien", $data);
+			if($insert){
+				echo '<script>alert("Sukses! Anda berhasil melakukan register. Silahkan login untuk mengakses data.");window.location.href="'.base_url('login/index').'";</script>';
+			}
 		}
-    }
 } 
 
 	public function aksi_login()
@@ -91,9 +85,14 @@ class Login extends CI_Controller {
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password')
 			);
+			$c = array(
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
+			);
 	
 			
 			$petugas = $this->lm->cek('user', $w)->row();
+			$client = $this->lm->cek_client('wali_pasien', $c)->row();
 			
 			if ($petugas != null) {
 
@@ -114,12 +113,25 @@ class Login extends CI_Controller {
 				}else if($petugas->id_level==3){
 					$this->session->set_userdata('data_session', $array);
 					redirect('Admin/index', 'refresh');
-				}else if($petugas->id_level==4){
+				}else {
 					$this->session->set_userdata('data_session', $array);
-					redirect('Welcome', 'refresh');
+					redirect('Welcome/index', 'refresh');
 				}
-			}else {
-				redirect('Login', 'refresh');
+			}else if($client != null){
+				$array = array(
+					'nama' => $client->nama,
+					'username' => $client->username,
+					'password' => $client->password,
+					'alamat' => $client->username,
+					'no_telp' => $client->username,		
+					'login' => TRUE,
+					'id_level' => $client->id_level,
+					
+				);
+				if($client->id_level==4){
+					$this->session->set_userdata('data_session', $array);
+					redirect('Welcome/index', 'refresh');
+				}
 			}
 		}else {
 			redirect('Login', 'refresh');

@@ -158,9 +158,9 @@
 						<p style="text-indent:45px">Dengan didukung oleh tim ahli dan profesional kami serta ruangan dan peralatan yang memadai, anda tidak akan kecewa dengan pelayanan kami, hewan kesayangan anda akan mendapatkan perawatan  sehingga akan terlihat lebih cantik dan menarik dan tetap dalam kondisi sehat.</p>
 						
 					</div>
-					<div class="outs_more-buttn">
-						<a href="<?= base_url('User/form'); ?>" data-toggle="modal" data-target="#myModal">Reservasi Now</a>
-						</div>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
 					
 				</div>
 				<div class="col-md-5 pope banner-agileits-btm" id="video">

@@ -53,15 +53,16 @@ Author URL: http://w3layouts.com
                             <input type="password" class="form-control" name="password" placeholder="Password" autofocus>
                         </div>
                         
-                        <div class="input-group">
-                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="no_telp" placeholder="No Telp" autofocus>
-                        </div>
-                        
+           
                         <div class="input-group">
                             <span><i class="fas fa-key" aria-hidden="true"></i></span>
                             <input type="text" class="form-control" name="alamat" placeholder="Alamat" autofocus>
                         </div>
+                        <div class="input-group">
+                            <span><i class="fas fa-key" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="no_telp" placeholder="No WhatsApp" autofocus>
+                        </div>
+                        
                         <div class="form-row bottom">
                             <div class="form-check">
                                 <input type="checkbox" id="remenber" name="remenber" value="remenber">
