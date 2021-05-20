@@ -58,7 +58,19 @@ class User extends CI_Controller {
 			redirect('User','refresh');
 		
 	}
-	
-	
+	public function form(){
+		if ($this->session->userdata('data_session') == NULL) {
+			redirect('Login/index', 'refresh');
+
+		} else {
+			
+			$w = array('peminjam.status' => "mengajukan", 'barang.id_instansi' =>  $this->session->userdata['data_session']['level']);
+			$data['peminjam'] = $this->pm->getData('peminjam', $w)->result();
+
+			$this->load->view('template/header');
+			$this->load->view('peminjaman/peminjam', $data);
+			$this->load->view('template/footer');
+		}
+	}
 
 }

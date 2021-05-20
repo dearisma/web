@@ -85,15 +85,20 @@ class Login extends CI_Controller {
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password')
 			);
+
+			$password = $this->input->post('password');
+			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+			
 			$c = array(
 				'username' => $this->input->post('username'),
-				'password' => $this->input->post('password')
+				password_verify('password' , $hashed_password)
 			);
 	
 			
 			$petugas = $this->lm->cek('user', $w)->row();
 			$client = $this->lm->cek_client('wali_pasien', $c)->row();
-			
+			// $client=md5($this->input->post('password'));
+			// print_r($client);die;
 			if ($petugas != null) {
 
 				$array = array(
@@ -119,19 +124,21 @@ class Login extends CI_Controller {
 				}
 			}else if($client != null){
 				$array = array(
-					'nama' => $client->nama,
+					// 'nama' => $client->nama,
 					'username' => $client->username,
 					'password' => $client->password,
-					'alamat' => $client->username,
-					'no_telp' => $client->username,		
+					// 'alamat' => $client->	username,
+					// 'no_telp' => $client->username,		
 					'login' => TRUE,
 					'id_level' => $client->id_level,
 					
 				);
-				if($client->id_level==4){
+				if($client->id_level==4)
 					$this->session->set_userdata('data_session', $array);
 					redirect('Welcome/index', 'refresh');
-				}
+				
+			}else{
+				redirect('Login', 'refresh');
 			}
 		}else {
 			redirect('Login', 'refresh');

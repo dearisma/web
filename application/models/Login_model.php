@@ -12,6 +12,7 @@ class Login_model extends CI_Model {
 	}	
 	public function cek_client($t, $c)
 	{	
+		
 		$this->db->where($c);
 		return $this->db->get($t);
 	}	
