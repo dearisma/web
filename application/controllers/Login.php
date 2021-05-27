@@ -135,7 +135,7 @@ class Login extends CI_Controller {
 				);
 				if($client->id_level==4)
 					$this->session->set_userdata('data_session', $array);
-					redirect('Welcome/index', 'refresh');
+					redirect('Reservasi/index', 'refresh');
 				
 			}else{
 				redirect('Login', 'refresh');
