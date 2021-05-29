@@ -42,21 +42,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="<?php echo base_url() ?>assets/css/login.css" rel='stylesheet' type='text/css' media="all">
 
 
-</head>
-<h1><a class="navbar-brand">Sekar Satwa<span class="fa fa-paw" aria-hidden="true"></span></a></h1>
 
-<body>
-	
-					</button>
-					</div>
-					
-							</ul>
-						</nav>
-					</div>
-				</nav>
-			</div>
-
-			<div class="clearfix"> </div>
-
-		</div>
 		
