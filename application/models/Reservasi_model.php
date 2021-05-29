@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Petugas_model extends CI_Model {
+class Reservasi_model extends CI_Model {
 
 	
 	public function getData($t)
@@ -23,6 +23,22 @@ class Petugas_model extends CI_Model {
 	}
 	
 	public function getDataId_grooming($t, $w)
+	{
+		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 	'left');
+		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 	'left');
+		$this->db->where($w,$y);
+		return $this->db->get($t);
+	}
+
+	public function getDataId_penitipan($t, $w)
+	{
+		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 	'left');
+		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 	'left');
+		$this->db->where($w,$y);
+		return $this->db->get($t);
+	}
+
+	public function getDataId_periksa($t, $w)
 	{
 		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 	'left');
 		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 	'left');
