@@ -456,6 +456,7 @@ background-size:40px;
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
+
 .form-right-to-w3ls, .form-left-to-w3l {
     flex-basis: 48%;
     -webkit-flex-basis: 48%;

@@ -251,17 +251,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-5 pope banner-agileits-btm" id="video">
-					<div class="button">
-
-						<a href="#small-dialog1" class="play-icon popup-with-zoom-anim"><span class="fa fa-play-circle" aria-hidden="true"></span></a>
+				<!-- <div class="col-md-5 pope banner-agileits-btm" id="video">	 -->
+				<div class=" col-md-5 col-sm-10 col-xs-9 contact-map">
+					<div class="map-grid">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1974.9913715575335!2d112.16023805935181!3d-8.103238748684948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78ec7531504f87%3A0x2319f8069463bde9!2sKlinik%20hewan%20sekar%20satwa!5e0!3m2!1sid!2sid!4v1622080775977!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 					</div>
-					<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
-						<div class="agileits_modal_body">
-							<iframe src="https://player.vimeo.com/video/72859932?"></iframe>
-
-						</div>
-					</div>
+				</div>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

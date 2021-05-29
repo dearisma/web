@@ -61,7 +61,7 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                     
                                 </div>
-                                <form action="<?= base_url('Admin/tambah_user') ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?= base_url('User/tambah_user') ?>" method="post" enctype="multipart/form-data">
                                     <div class="modal-body">
                                         <label for="username">Username </label>
                                         <input type="text" id="username" name="username" class="form-control" required><br>
@@ -145,7 +145,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>NO</th>
+                                            <th>No</th>
                                             <th>Username</th>
                                             <th>Nama Petugas</th>
                                         </tr>
@@ -211,7 +211,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
                 </div>
             </div>
         </div>
