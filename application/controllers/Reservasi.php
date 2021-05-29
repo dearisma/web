@@ -25,6 +25,8 @@ class Reservasi extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	//kenapa gabisa 
+
 	public function grooming()
 	{
 		$this->load->view('Reservasi/grooming');
