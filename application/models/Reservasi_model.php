@@ -14,6 +14,10 @@ class Reservasi_model extends CI_Model {
 	{
     return $this->db->insert($table, $data);
 	}
+	public function ins($t , $object)
+	{
+		$this->db->insert($t, $object);
+	}
 
 	public function getDataId($t, $w)
 	{
@@ -46,10 +50,6 @@ class Reservasi_model extends CI_Model {
 		return $this->db->get($t);
 	}
 	
-	public function ins($t, $object)
-	{
-		$this->db->insert($t, $object);
-	}
 
 }
 

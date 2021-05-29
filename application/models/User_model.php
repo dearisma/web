@@ -13,10 +13,10 @@ class User_model extends CI_Model {
 	{
     return $this->db->insert($table, $data);
 	}
-	public function getDataId($t, $w)
+	public function getDataId($t, $u)
 	{
 		$this->db->join('level', 'level.id_level = ' . $t . '.id_level', 	'left');
-		$this->db->where($w);
+		$this->db->where($u);
 		return $this->db->get($t);
 	}
 	public function ins($t, $object)

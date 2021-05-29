@@ -36,7 +36,7 @@ class User extends CI_Controller {
 			$w = array ('data_user.id_level');
 			$data['data_user'] = $this->um->getDataId('user', $w)->result();
 		}	
-		$data['l'] = $this->um->getData('level')->result();
+		$data['level'] = $this->um->getData('level')->result();
 		$this->load->view('template/header_admin', $data);
 		
 		$this->load->view('template/topbar');
@@ -64,12 +64,19 @@ class User extends CI_Controller {
 
 		} else {
 			
-			$w = array('peminjam.status' => "mengajukan", 'barang.id_instansi' =>  $this->session->userdata['data_session']['level']);
-			$data['peminjam'] = $this->pm->getData('peminjam', $w)->result();
+			$ins = array(
+                'id_hewan' => $this->input->post('id_user'),
+                'nama' => $this->input->post('nama'),
+                'jenis_kel' => $this->input->post('jenis_kel'),	
+                'bb' => $this->input->post('bb'),	
+				'tb' => $this->input->post('tb'),	
+				'id_wali' => $this->input->post('id_wali')			
+			);
+			$this->um->ins('Hewan', $ins);
 
-			$this->load->view('template/header');
-			$this->load->view('peminjaman/peminjam', $data);
-			$this->load->view('template/footer');
+			
+			$this->session->set_flashdata('pesan', 'Akun User Berhasil ditambahkan!');
+			redirect('User','refresh');
 		}
 	}
 

@@ -8,22 +8,27 @@
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-
+                        <h3>Welcome</h3>
+                        <p>You are 30 seconds away from earning your own money!</p>
+                        
                     </div>
                     <div class="col-md-9 register-right">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Formulir Grooming</h3>
+                                <h3 class="register-heading">Formulir Penitipan</h3>
 								<?php
 								$a=$this->session->set_userdata('data_session');
 								?>
                                 <div class="row register-form">
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Tanggal Grooming *" value="<?= $a<'nama'>?>" />
+                                            <input type="date" class="form-control" placeholder="Tanggal Dititipkan *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Pemilik *" value="" />
+                                            <input type="date" class="form-control" placeholder="Tanggal Diambil *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Nama Pemilik *" value="<?= $a->nama ?>" />
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Alamat *" value="" />
@@ -32,7 +37,7 @@
                                             <input type="text" class="form-control"  placeholder="Nomor Hp *" value="" />
                                         </div>
 										<div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
+                                            <input type="email" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
                                         </div>
                                        
                                     </div>

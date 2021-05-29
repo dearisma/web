@@ -22,7 +22,7 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 		//Do your magic here
-		$this->load->model('Admin_model', 'pm');
+		$this->load->model('Admin_model', 'am');
 		
 	}
 
@@ -31,14 +31,29 @@ class Admin extends CI_Controller {
 		error_reporting(0);
 		$cari = $_GET['keyword'];
 		if ($cari != null) {
-			$data['data_petugas'] = $this->pm->search($cari)->result();
+			$data['data_petugas'] = $this->am->search($cari)->result();
 		}else{
 			$w = array ('petugas.id_level');
-			$data['data_petugas'] = $this->pm->getDataId('petugas', $w)->result();
+			$data['data_petugas'] = $this->am->getDataId('petugas', $w)->result();
 		}	
-		$data['level'] = $this->pm->getData('level')->result();
+		$data['level'] = $this->am->getData('level')->result();
 		$this->load->view('template/header_admin', $data);
 		
+		$this->load->view('template/topbar');
+		$this->load->view('Admin/index', $data);
+	}
+	public function user()
+	{
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_user'] = $this->am->search($cari)->result();
+		}else{
+			$w = array ('user.id_level');
+			$data['data_user'] = $this->am->getDataId('user', $w)->result();
+		}	
+		$data['lv'] = $this->am->getData('level')->result();
+		$this->load->view('template/header_admin', $data);
 		$this->load->view('template/topbar');
 		$this->load->view('Admin/index', $data);
 	}
@@ -62,9 +77,9 @@ class Admin extends CI_Controller {
 				'foto' => $this->upload->data('file_name'),
 				'id_level' => $this->input->post('id_level'),
 			);
-			$this->pm->ins('petugas', $ins);
+			$this->am->ins('petugas', $ins);
 			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
-			redirect('Petugas','refresh');
+			redirect('Admin','refresh');
 		}	
 	}
 	public function tambah_user()
@@ -74,9 +89,9 @@ class Admin extends CI_Controller {
 				'password' => $this->input->post('alumni'),
 				'id_level' => $this->input->post('id_level'),
 			);
-			$this->pm->ins('user', $ins);
+			$this->am->ins('user', $ins);
 			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
-			redirect('Petugas','refresh');
+			redirect('Admin','refresh');
 			
 		
 	}
