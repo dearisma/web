@@ -23,13 +23,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--booststrap-->
 
-
-
 <!--services-->
 <div class="services" id="services">
 		<div class="container">
+		<!-- Navigation -->
+					<div class="navbar-header navbar-left">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+						<h1><a class="navbar-brand" href="<?= base_url('Welcome/index'); ?>">Sekar Satwa<span class="fa fa-paw" aria-hidden="true"></span></a></h1>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+						<nav>
+							<ul class="nav navbar-nav">
+								<li><a href="<?= base_url('Welcome/index'); ?>">Home</a></li>
+								<li><a href="<?= base_url('Team/index'); ?>">Our Team</a></li>
+								<li><a href="<?= base_url('Services/index'); ?>" class="scroll">Services</a></li>
+								<li><a href="#gallery" class="scroll">Katalog</a></li>
+								<li><a href="<?= base_url('Login/index'); ?>">Login</a></li>
+								<div></div><br>
+							</ul>
+						</nav>
+					</div>
+				</nav>
+			</div>
+
 <div></div>
-			<h3 class="title clr">Services</h3>
+<div></div>
+<br>
+			<br><br><h3 class="title clr">Services</h3>
 
 			<div class="banner-bottom-girds ">
 				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
@@ -133,6 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-
+<div></div>
+<div></div>
 
 	<!--//services-->
