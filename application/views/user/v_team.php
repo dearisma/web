@@ -105,25 +105,6 @@
 											<div class="clear"></div>
 										</div>
 
-									</div>
-									<div class="main">
-										<div class="form-left-to-w3l">
-											<input type="text" name="Pin code" placeholder="Pin code" required="">
-											<div class="clear"></div>
-										</div>
-										<div class="form-right-to-w3ls">
-											<select class="form-control buttom">
-												<option value="">
-												Select Country</option>
-													<option value="category2">Oman</option>
-													<option value="category1">Australia</option>
-													<option value="category3">America</option>
-													<option value="category3">London</option>
-													<option value="category3">Goa</option>
-													<option value="category3">Canada</option>
-													<option value="category3">Srilanka</option>
-												</select>
-
 											<div class="clear"></div>
 										</div>
 
@@ -147,6 +128,7 @@
 		</div>
 	</div>
 	<!-- //modal -->
+	
 	<!--About-->
 	<div class="about" id="about">
 		<div class="container"><?php
@@ -155,17 +137,18 @@
 			<div class="about-top-grids">
 				<div class="col-md-7 about-top-grid">
 				
-					<h2>'. $pm->nama . '</h2>
-					<div class="about-para"><br>
-						<b><p style="text-indent:45px">Head Doctor/Medical</p></b>
+				<br><br><br><h3>'. $pm->nama . '</h3>
+					<br>
+					<div class="about-para">
+						<b>Head Doctor/Medical</b>
 						<p>Alumni : '. $pm->alumni . '</p>
 						
 					</div>
 				</div>
 				<br>
-					<div class="col-md-5 " >
-					<img style="width: 500px; height:400px;"  src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '" class="rounded-circle"">
+					<img style="width: 300px; height:400px;"  src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '" class="rounded-circle"">
 					</div>
+					
 					';
 				}?>
 				
@@ -194,7 +177,7 @@
 					</div>
 				</div>
 				<div class="col-md-5 " >
-				<img src='<?php echo base_url() ?>assets/images/dokter.png' style="width:500px;height:400px">
+				<img src='<?php echo base_url() ?>assets/images/dokter.png' style="width:300px;height:400px">
 					
 			</div>
 		</div>
