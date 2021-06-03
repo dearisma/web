@@ -1,4 +1,5 @@
-		<!-- Slideshow 4 -->
+<link href="<?php echo base_url() ?>assets/css/katalog.css" rel='stylesheet' type='text/css' media="all">
+  	<!-- Slideshow 4 -->
 		<div class="slider">
 			<div class="callbacks_container">
 				<ul class="rslides" id="slider4">
@@ -6,7 +7,7 @@
 						<div class="slider-img">
 							<div class="container">
 								<div class="slider-info">
-									<h4> <span class="home-banner">O</span>ur <span class="home-banner">P</span>roduct <span class="home-banner"></span>
+									<h4> <span class="home-banner">O</span>ur <span class="home-banner">S</span>ervices <span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span></h4>
 									<p>We provide reliable veterinary services for your pets</p>
@@ -29,74 +30,145 @@
 		<!-- //banner -->
 	
 	</div>
-	<!-- Rotating card -->
-<div class="card-wrapper">
-  <div id="card-2" class="card card-rotating text-center">
 
-    <!--Front Side-->
-    <div class="face front">
+       <!-- Topic Cards -->
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Title 01</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/04/09/19/55/low-poly-3305284_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">                                    
+                                    <h6>Title 02</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/04/06/13/46/poly-3295856_960_720.png" alt="" />
+                                </div>
 
-      <!-- Image-->
-      <div class="view overlay">
-        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo5.jpg" alt="Example photo">
-        <a>
-          <div class="mask rgba-white-slight"></div>
-        </a>
-      </div>
-
-      <!--Content-->
-      <div class="card-body">
-
-        <a class="rotate-btn float-right" data-card="card-2"><i class="fas fa-share-alt fa-lg"></i></a>
-        <h4 class="">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat tenetur odio suscipit
-          non commodi vel eius veniam maxime.</p>
-        <a class="link-text">
-          <h5>Read more <i class="fas fa-angle-double-right"></i></h5>
-        </a>
-
-      </div>
-
+                                <div class="text-container">
+                                    <h6>Title 03</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/03/30/15/12/dog-3275593_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Title 04</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--Front Side-->
 
-    <!--Back Side-->
-    <div class="face back">
+ <!-- Topic Cards -->
+ <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Title 01</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/04/09/19/55/low-poly-3305284_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">                                    
+                                    <h6>Title 02</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/04/06/13/46/poly-3295856_960_720.png" alt="" />
+                                </div>
 
-      <!-- Content -->
-      <div class="content text-center">
-
-        <h4 class="card-title font-weight-bold my-4">Social shares <i class="fas fa-times rotate-btn text-muted"
-            data-card="card-2"></i></h4>
-        <hr>
-        <!-- Social Icons -->
-        <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4 py-2">
-          <li class="list-inline-item"><a class="btn-floating btn-dribbble"><i class="fab fa-dribbble"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-slack"><i class="fab fa-slack-hash"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-ins"><i class="fab fa-instagram"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-pin"><i class="fab fa-pinterest"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-tw"><i class="fab fa-twitter"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-gplus"><i class="fab fa-google-plus-g"> </i></a></li>
-          <li class="list-inline-item"><a class="btn-floating btn-git"><i class="fab fa-github"> </i></a></li>
-        </ul>
-        <h5 class="font-weight-bold my-4">Join our community</h5>
-        <hr>
-        <!-- Social Icons -->
-        <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4">
-          <li class="list-inline-item"><a class="btn btn-fb px-4"><i class="fab fa-facebook-f"> </i></a></li>
-          <li class="list-inline-item"><a class="btn btn-tw px-4"><i class="fab fa-twitter"> </i></a></li>
-          <li class="list-inline-item"><a class="btn btn-li px-4"><i class="fab fa-linkedin-in"> </i></a></li>
-          <li class="list-inline-item"><a class="btn btn-ins px-4"><i class="fab fa-instagram"> </i></a></li>
-        </ul>
-
-      </div>
-
+                                <div class="text-container">
+                                    <h6>Title 03</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://cdn.pixabay.com/photo/2018/03/30/15/12/dog-3275593_960_720.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Title 04</h6>
+                                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--Back Side-->
 
-  </div>
-</div>
-<!-- Rotating card -->
 
 	<!--js working-->
 	<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>

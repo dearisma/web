@@ -28,13 +28,17 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		error_reporting(0);
-		$cari = $_GET['keyword'];
-		if ($cari != null) {
-			$data['data_petugas'] = $this->am->search($cari)->result();
+		if ($this->session->userdata('data_session') == NULL) {
+			redirect('Welcome', 'refresh');
 		}else{
-			$w = array ('petugas.id_level');
-			$data['data_petugas'] = $this->am->getDataId('petugas', $w)->result();
+			error_reporting(0);
+			$cari = $_GET['keyword'];
+			if ($cari != null) {
+				$data['data_petugas'] = $this->am->search($cari)->result();
+			}else{
+				$w = array ('petugas.id_level');
+				$data['data_petugas'] = $this->am->getDataId('petugas', $w)->result();
+			}
 		}	
 		$data['level'] = $this->am->getData('level')->result();
 		$this->load->view('template/header_admin', $data);

@@ -53,9 +53,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
+        
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -66,11 +64,16 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Grooming</a>
-                        <a class="collapse-item" href="cards.html">Penitipan</a>    
-                        <a class="collapse-item" href="cards.html">Pemeriksaan</a>
+                        <a class="collapse-item" href="<?= base_url('Petugas/grooming'); ?>">Grooming</a>
+                        <a class="collapse-item" href="<?= base_url('Petugas/penitipan'); ?>">Penitipan</a>    
+                        <a class="collapse-item" href="<?= base_url('Petugas/pemeriksaan'); ?>">Pemeriksaan</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('Petugas/katalog'); ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Catalog</span></a>
             </li>
             
           

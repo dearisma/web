@@ -8,37 +8,43 @@
                 <div class="row">
                     <div class="col-md-3 register-left">
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h3>Welcome</h3>
-                        <p>You are 30 seconds away from earning your own money!</p>
-                        
+
                     </div>
                     <div class="col-md-9 register-right">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Formulir Penitipan</h3>
-								<?php
-								$a=$this->session->set_userdata('data_session');
-								?>
+                                <form action="<?= base_url('Reservasi/tambah_penitipan'); ?>" class="form-group" method="POST">
                                 <div class="row register-form">
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Tanggal Dititipkan *" value="" />
+                                        <label for="nama">Tanggal Penitipan*</label>
+                                        <input type="date" id="tgl_titip" name="tgl_titip" class="form-control" placeholder="Tanggal Titip *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Tanggal Diambil *" value="" />
+                                        <label for="nama">Tanggal ambil*</label>
+                                        <input type="date" id="tgl_diambil" name="tgl_diambil" class="form-control" placeholder="Tanggal Diambil *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Pemilik *" value="<?= $a->nama ?>" />
+                                        <label for="nama">Nama*</label>
+                                        <input type="text" id="id_wali" name="nama" class="form-control" value="<?= $log['nama']; ?>" ?> <readonly>
+                                            
                                         </div>
+                                        <input type="hidden"  name="id_wali" class="" value="<?= $log['id_wali']; ?>" ?> <readonly>
+                                        
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Alamat *" value="" />
-                                        </div>
+                                        <label for="alamat">Alamat*</label>
+                                            <input type="text" class="form-control" value="<?= $log['alamat']; ?>" readonly>
+                                        </div>                                          
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Nomor Hp *" value="" />
+                                        <label for="no_hp">No whatsapp*</label>
+                                            <input type="text" class="form-control"  placeholder="Nomor Hp *" value="<?= $log['no_telp'] ?>" />
                                         </div>
 										<div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
+                                        <label for="no_hp">Hewan*</label>
+                                            <input type="text" id="hewan" name="hewan" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
                                         </div>
+                                       
                                        
                                     </div>
                                     <div class="col-md-6">

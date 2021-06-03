@@ -19,6 +19,10 @@ class Reservasi_model extends CI_Model {
 		$this->db->insert($t, $object);
 	}
 
+	public function upd($t, $object, $w)
+	{
+		$this->db->update($t, $object, $w);
+	}
 	public function getDataId($t, $w)
 	{
 		$this->db->join('level', 'level.id_level = ' . $t . '.id_level', 	'left');

@@ -22,11 +22,16 @@ class Petugas_model extends CI_Model {
 		return $this->db->get($t);
 	}
 	
-	public function getDataId_grooming($t, $w)
+	public function getData_Reservasi($t)
 	{
-		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 	'left');
-		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 	'left');
-		$this->db->where($w,$y);
+		return $this->db->get($t);
+	}
+
+	public function getDataId_Reservasi($t, $w)
+	{
+	
+		$this->db->join('wali_pasien', 'wali_pasien.id_wali = ' . $t . '.id_wali', 	'left');
+		$this->db->where($w);
 		return $this->db->get($t);
 	}
 	
