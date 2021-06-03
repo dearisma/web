@@ -28,36 +28,75 @@ class Petugas extends CI_Controller {
 
 	public function index()
 	{
-		error_reporting(0);
-		$cari = $_GET['keyword'];
-		if ($cari != null) {
-			$data['data_petugas'] = $this->pm->search($cari)->result();
+		if ($this->session->userdata('data_session') == NULL) {
+			redirect('Welcome', 'refresh');
 		}else{
-			$w = array ('petugas.id_level');
-			$data['data_petugas'] = $this->pm->getDataId('petugas', $w)->result();
-		}	
-		$data['level'] = $this->pm->getData('level')->result();
-		$this->load->view('template/header_petugas', $data);
-		
-		$this->load->view('template/topbar');
-		$this->load->view('Admin/Petugas', $data);
+			error_reporting(0);
+			$cari = $_GET['keyword'];
+			if ($cari != null) {
+				$data['data_petugas'] = $this->pm->search($cari)->result();
+			}else{
+				$w = array ('petugas.id_level');
+				$data['data_petugas'] = $this->pm->getDataId('petugas', $w)->result();
+			}	
+			$data['level'] = $this->pm->getData('level')->result();
+			$this->load->view('template/header_petugas', $data);
+			
+			$this->load->view('template/topbar');
+			$this->load->view('Admin/Petugas', $data);
+		}
 	}
 	public function grooming()
 	{
 		error_reporting(0);
 		$cari = $_GET['keyword'];
 		if ($cari != null) {
-			$data['data_grooming'] = $this->pm->search_grooming($cari)->result();
+			$data['data_grooming'] = $this->pm->search_Reservasi($cari)->result();
 		}else{
 			$w = array ('grooming.id_wali');
-			$y = array ('grooming.id_hewan');
-			$data['data_grooming'] = $this->pm->getDataId_Grooming('grooming', $w, $y)->result();
+			$data['data_grooming'] = $this->pm->getDataId_Reservasi('grooming', $w)->result();
 		}	
-		$data['wali'] = $this->pm->getData_Grooming('wali_pasien')->result();
-		$data['hewan'] = $this->pm->getData_Grooming('hewan')->result();
+		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
 		$this->load->view('template/header_petugas', $data);
 		$this->load->view('template/topbar');
 		$this->load->view('Admin/Petugas', $data);
+	}
+	public function penitipan()
+	{
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_penitipan'] = $this->pm->search_Reservasi($cari)->result();
+		}else{
+			$w = array ('penitipan.id_wali');
+			$data['data_penitipan'] = $this->pm->getDataId_Reservasi('hotel', $w)->result();
+		}	
+		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+		$this->load->view('template/header_petugas', $data);
+		$this->load->view('template/topbar');
+		$this->load->view('Admin/Penitipan', $data);
+	}
+	public function pemeriksaan()
+	{
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_periksa'] = $this->pm->search_Reservasi($cari)->result();
+		}else{
+			$w = array ('periksa.id_wali');
+			$data['data_periksa'] = $this->pm->getDataId_Reservasi('periksa', $w)->result();
+		}	
+		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+		$this->load->view('template/header_petugas', $data);
+		$this->load->view('template/topbar');
+		$this->load->view('Admin/Pemeriksaan', $data);
+	}
+	
+	public function katalog()
+	{	
+		$this->load->view('template/header_petugas');
+		$this->load->view('template/topbar');
+		$this->load->view('admin/katalog');
 	}
 	
 	

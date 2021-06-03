@@ -13,7 +13,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Grooming Sekar Satwa</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Pemeriksaan Sekar Satwa</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -22,7 +22,7 @@
                                         <tr>
                                             <th>NO</th>  
                                             <th>AKSI</th>                                           
-                                            <th>TANGGAL GROOMING</th>
+                                            <th>TANGGAL PENGAJUAN</th>
                                             <th>NAMA </th>
                                             <th>ALAMAT </th>
                                             <th>NO HP </th>
@@ -36,9 +36,9 @@
 							<?php
                            
 							$no = 0;
-							foreach ($data_grooming as $pm) {
+							foreach ($data_periksa as $pm) {
 								$no++;
-                                if ($data_grooming->status == "mengajukan") {
+                                if ($data_periksa->status == "mengajukan") {
 									$sts = "dikonfirmasi";
                                 }
                                 
@@ -50,7 +50,7 @@
                                         </span>
                                         <span class="text">Konfirmasi</span>
                                     </a> 
-                                        <td>' .  $pm->tgl_grooming .  '</td>		
+                                        <td>' .  $pm->tgl_periksa .  '</td>		
 										<td>' . $pm->nama . '</td>
                                         <td>' . $pm->alamat . '</td>
                                         <td>' . $pm->no_telp . '</td>

@@ -14,25 +14,27 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Formulir Grooming</h3>
-								<?php
-								$a=$this->session->set_userdata('data_session');
-								?>
+
+                                <form action="<?= base_url('Reservasi/tambah_grooming'); ?>" class="form-group" method="POST">
                                 <div class="row register-form">
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <input type="date" class="form-control" placeholder="Tanggal Grooming *" value="<?= $a<'nama'>?>" />
+                                            <input type="date" id="tgl_grooming" name="tgl_grooming" class="form-control" placeholder="Tanggal Grooming *" value="" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Pemilik *" value="" />
+                                        <input type="text" id="id_wali" name="nama" class="form-control" value="<?= $log['nama']; ?>" ?> <readonly>
+                                            
                                         </div>
+                                        <input type="hidden"  name="id_wali" class="" value="<?= $log['id_wali']; ?>" ?> <readonly>
+                                        
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Alamat *" value="" />
-                                        </div>
+                                            <input type="text" class="form-control" value="<?= $log['alamat']; ?>" readonly>
+                                        </div>                                          
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="Nomor Hp *" value="" />
+                                            <input type="text" class="form-control"  placeholder="Nomor Hp *" value="<?= $log['no_telp'] ?>" />
                                         </div>
 										<div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
+                                            <input type="text" id="hewan" name="hewan" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
                                         </div>
                                        
                                     </div>
@@ -41,6 +43,7 @@
                                         <input type="submit" class="btnRegister"  value="Send"/>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                             
                         </div>

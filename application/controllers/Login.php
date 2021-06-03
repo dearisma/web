@@ -29,7 +29,11 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+		if ($this->session->userdata('data_session') != null) {
+			redirect('Welcome', 'refresh');
+		} else {
 			$this->load->view('user/v_login');
+		}
 		
 	}
 	
@@ -124,17 +128,20 @@ class Login extends CI_Controller {
 				}
 			}else if($client != null){
 				$array = array(
-					// 'nama' => $client->nama,
+					'id_wali' => $client->id_wali,
+					'nama' => $client->nama,
 					'username' => $client->username,
 					'password' => $client->password,
-					// 'alamat' => $client->	username,
-					// 'no_telp' => $client->username,		
+					'alamat' => $client->alamat,
+					'no_telp' => $client->no_telp,		
 					'login' => TRUE,
 					'id_level' => $client->id_level,
 					
 				);
+				// die (var_dump ($array));
 				if($client->id_level==4)
 					$this->session->set_userdata('data_session', $array);
+					
 					redirect('Reservasi/index', 'refresh');
 				
 			}else{
@@ -148,7 +155,7 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		redirect('Login');
+		redirect('Welcome');
 	}
 	
 }
