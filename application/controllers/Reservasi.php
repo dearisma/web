@@ -80,6 +80,7 @@ class Reservasi extends CI_Controller {
 			'tgl_periksa' => date('Y-m-d'), 
 			'id_wali' => $this->input->post('id_wali'),
 			'hewan' => $this->input->post('hewan'),
+			'keluhan' => $this->input->post('keluhan'),
 			'status' => 'mengajukan'
 		);
 

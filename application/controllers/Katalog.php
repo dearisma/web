@@ -19,9 +19,26 @@ class Katalog extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+	public function __construct()
+	{
+		parent::__construct();
+		//Do your magic here
+		$this->load->model('Petugas_model', 'pm');
+		
+	}
 	public function index()
 	{	
-		$this->load->view('template/header');
+	
+	
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_katalog'] = $this->pm->search_Reservasi($cari)->result();
+			
+		}
+		$data['katalog'] = $this->pm->getData_Reservasi('katalog')->result();
+		// die (var_dump ($data));
+		$this->load->view('template/header', $data);
 		$this->load->view('user/v_katalog');
 	}
 }

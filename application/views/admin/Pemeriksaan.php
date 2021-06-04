@@ -23,6 +23,7 @@
                                             <th>NO</th>  
                                             <th>AKSI</th>                                           
                                             <th>TANGGAL PENGAJUAN</th>
+                                            <th>KELUHAN</th>
                                             <th>NAMA </th>
                                             <th>ALAMAT </th>
                                             <th>NO HP </th>
@@ -44,14 +45,15 @@
                                 
 								echo '<tr>
 										<td>' . $no . '</td>
-                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-primary btn-icon-split">
+                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
                                         <span class="text">Konfirmasi</span>
                                     </a> 
                                         <td>' .  $pm->tgl_periksa .  '</td>		
-										<td>' . $pm->nama . '</td>
+										<td>' .  $pm->keluhan .  '</td>	
+                                        <td>' . $pm->nama . '</td>
                                         <td>' . $pm->alamat . '</td>
                                         <td>' . $pm->no_telp . '</td>
                                         <td>' . $pm->hewan . '</td>

@@ -22,6 +22,7 @@
                                         <label for="tgl_periksa">Tanggal Pemeriksaan*</label>
                                             <input type="date" id="tgl_periksa" name="tgl_grooming" class="form-control" placeholder="Tanggal Grooming *" value="" />
                                         </div>
+                                        
                                         <div class="form-group">
                                         <label for="nama">Nama*</label>
                                         <input type="text" id="id_wali" name="nama" class="form-control" value="<?= $log['nama']; ?>" ?> <readonly>
@@ -41,6 +42,11 @@
                                         <label for="no_hp">Hewan*</label>
                                             <input type="text" id="hewan" name="hewan" class="form-control" placeholder="Nama Hewan/Jenis *" value="" />
                                         </div>
+                                        <div class="form-group">
+                                        <label for="no_hp">Keluhan*</label>
+                                            <input type="text" id="keluhan" name="keluhan" class="form-control" placeholder="Keluhan *" value="" />
+                                        </div>
+                                        
                                        
                                     </div>
                                     <div class="col-md-6">
