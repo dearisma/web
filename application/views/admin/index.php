@@ -28,7 +28,11 @@
                                     <div class="modal-body">
                                         <label for="nama">Nama </label>
                                         <input type="text" id="nama" name="nama" class="form-control" required><br>
+                                        <label for="nama">Jabatan </label>
+                                        <input type="text" id="jabatan" name="jabatan" class="form-control" required><br>
                                         <label for="nama">Alumni </label>
+                                        <input type="text" id="alumni" name="alumni" class="form-control" required><br>
+                                        <label for="nama">Seminar </label>
                                         <input type="text" id="alumni" name="alumni" class="form-control" required><br>
                                         <label for="foto">Foto </label>
                                         <input type="file" id="foto" name="foto" class="form-control" required><br>

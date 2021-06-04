@@ -7,6 +7,7 @@ class Petugas_model extends CI_Model {
 	
 	public function getData($t)
 	{
+		
 		return $this->db->get($t);
 	}
 

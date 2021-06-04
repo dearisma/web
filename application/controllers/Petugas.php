@@ -32,14 +32,14 @@ class Petugas extends CI_Controller {
 			redirect('Welcome', 'refresh');
 		}else{
 			error_reporting(0);
-			$cari = $_GET['keyword'];
-			if ($cari != null) {
-				$data['data_petugas'] = $this->pm->search($cari)->result();
-			}else{
-				$w = array ('petugas.id_level');
-				$data['data_petugas'] = $this->pm->getDataId('petugas', $w)->result();
-			}	
-			$data['level'] = $this->pm->getData('level')->result();
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_grooming'] = $this->pm->search_Reservasi($cari)->result();
+		}else{
+			$w = array ('grooming.id_wali');
+			$data['data_grooming'] = $this->pm->getDataId_Reservasi('grooming', $w)->result();
+		}	
+		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
 			$this->load->view('template/header_petugas', $data);
 			
 			$this->load->view('template/topbar');
@@ -92,13 +92,45 @@ class Petugas extends CI_Controller {
 		$this->load->view('Admin/Pemeriksaan', $data);
 	}
 	
+	
 	public function katalog()
 	{	
-		$this->load->view('template/header_petugas');
-		$this->load->view('template/topbar');
-		$this->load->view('admin/katalog');
-	}
 	
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_katalog'] = $this->pm->search_Reservasi($cari)->result();
+			
+		}
+		$data['katalog'] = $this->pm->getData_Reservasi('katalog')->result();
+		// die (var_dump ($data));
+		$this->load->view('template/header_petugas', $data);
+		$this->load->view('template/topbar');
+		$this->load->view('Admin/Katalog', $data);
+	}
+	public function ins_katalog()
+	{
+		$config['upload_path'] = './assets/uploads/';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('foto')){
+			$error = array('error' => $this->upload->display_errors());
+			$this->session->set_flashdata('pesan', $error['error']);
+			redirect('Petugas','refresh');
+		}
+		else{
+			$ins = array(
+				'nama' => $this->input->post('nama'),
+				'deskripsi' => $this->input->post('deskripsi'),
+				'foto' => $this->upload->data('file_name')
+			);
+			$this->pm->ins('katalog', $ins);
+			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
+			redirect('Petugas/katalog','refresh');
+	}
+}
 	
 
 }

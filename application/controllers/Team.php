@@ -30,7 +30,8 @@ class Team extends CI_Controller {
 	{
 		error_reporting(0);
 		$cari = $_GET['keyword'];
-		$data['data_petugas'] = $this->pm->getData('petugas')->result();	
+		$w = array('petugas.id_level' => 1);
+		$data['data_petugas'] = $this->pm->getDataId('petugas',$w)->result();	
 		$this->load->view('template/header', $data);
 		$this->load->view('user/v_team', $data);
 	}

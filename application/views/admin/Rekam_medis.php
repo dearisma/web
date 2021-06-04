@@ -7,14 +7,12 @@
 
                
                 <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                    <div class="container-fluid">
+                <div class="container-fluid">
                             <!-- Page Heading -->
                             <div class="col-md">
                                 <a href="#tambah" style="float: left;" class="btn btn-primary " data-toggle="modal">
                                 <i class="fas fa-plus"></i>
-                                <span class="icon text-white-50"></span>Tambah Katalog</a><br><br><br>
+                                <span class="icon text-white-50"></span>Tambah Data Rekam Medis</a><br><br><br>
                                 
                             </div>
                         <div class="modal fade" id="tambah">
@@ -24,15 +22,28 @@
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                     
                                 </div>
-                                <form action="<?= base_url('Petugas/ins_katalog') ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?= base_url('Dokter/ins_rm') ?>" method="post" enctype="multipart/form-data">
                                     <div class="modal-body">
-                                        <label for="nama">Nama Barang </label>
-                                        <input type="text" id="nama" name="nama" class="form-control" required><br>
-                                        <label for="nama">Deskripsi </label>
-                                        <input type="text" id="deskripsi" name="deskripsi" class="form-control" required><br>
-                                        <label for="foto">Foto </label>
-                                        <input type="file" id="foto" name="foto" class="form-control" required><br>
-                                   
+                                        <label for="hewan">Nama Hewan </label>
+                                        <input type="text" id="hewan" name="hewan" class="form-control" required><br>
+                                        <label for="anamnesa">Anamnesa</label>
+                                        <input type="text" id="anamnesa" name="anamnesa" class="form-control" required><br>
+                                        <label for="lab">Lab </label>
+                                        <input type="text" id="lab" name="lab" class="form-control" required><br>
+                                        <label for="diagnosa">Diagnosa </label>
+                                        <input type="text" id="diagnosa" name="diagnosa" class="form-control" required><br>
+                                        <label for="terapi">Terapi </label>
+                                        <input type="text" id="terapi" name="terapi" class="form-control" required><br>
+                                        <label for="keterangan">Keterangan</label>
+                                        <input type="text" id="keterangan" name="keterangan" class="form-control" required><br>
+                                        <label for="tanggal">Tanggal Masuk</label>
+                                        <input type="date" id="tanggal" name="tanggal" class="form-control" required><br>
+                                        <label for="id_wali">Wali</label>
+                                        <select name="id_wali" id="id_wali" class="form-control" required>
+                                            <?php foreach ($wali as $w) : ?>
+                                                <option value="<?= $w->id_wali ?>"><?= $w->nama ?></option>
+                                            <?php endforeach; ?>
+                                        </select><br>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -43,54 +54,53 @@
                         </div>
                             
                      </div>
-                    
-                        <p class="mb-4"></a></p>
-
-                        <?php if ($this->session->flashdata('pesan') != null) : ?>
-                                <div class="alert alert-success">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button><?= $this->session->flashdata('pesan'); ?>
-                                </div>
-                            <?php endif ?>
-                            
+                <!-- Begin Page Content -->
+                         
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Katalog</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Rekam Medis Sekar Satwa</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>NO</th>
-                                            <th>BARANG</th>
-                                            <th>DESKRIPSI</th>
-                                            <th>FOTO</th>
-                                            <th>AKSI</th>
-                                        
+                                            <th>NO</th>  
+                                            <th>NAMA</th>  
+                                            <th>ANAMNESA</th>                                           
+                                            <th>LAB</th>
+                                            <th>DIAGNOSA</th>
+                                            <th>TERAPI</th>
+                                            <th>KETERANGAN </th>
+                                            <th>TANGGAL</th>
+                                            <th>WALI </th>
+                                            
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <img src="" alt="">
 							<?php
+                           
 							$no = 0;
-							foreach ($katalog as $pm) {
+							foreach ($rekam_medis as $pm) {
 								$no++;
+                               
 								echo '<tr>
 										<td>' . $no . '</td>
-										<td>' . $pm->nama . '</td>
-										<td>' . $pm->deskripsi . '</td>
-										<td> <img style="width: 200px; height:200px;" src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '"></td>	
-                                       
-                                        <td> 
-                                        <a href="" class="btn btn-success btn-circle"data-toggle="modal" data-target="#update_pegawai' . $dt->id_barang . '"  data-popup="tooltip" data-placement="top" >
-                                        <i class="fas fa-edit"></i> </a>
-                                            <a href="#edit" class="btn btn-danger btn-circle"  data-toggle="modal" data-target="#update_pegawai' . $dt->id_barang . '"  data-popup="tooltip" data-placement="top" >
-                                            <i class="fas fa-trash"></i> </a>
-                                        </td>
-                                       </tr>';
+                                      
+                                        <td>' .  $pm->hewan .  '</td>		
+										<td>' .  $pm->anamnesa .  '</td>	
+                                        <td>' . $pm->lab . '</td>
+                                        <td>' . $pm->diagnosa . '</td>
+                                        <td>' . $pm->terapi . '</td>
+                                        <td>' . $pm->keterangan . '</td>
+                                        <td>' . $pm->tanggal . '</td>
+                                        <td>' . $pm->nama . '</td>
+										
+									  </tr>';
+                                
 							}
 							?>
                                     </tbody>
@@ -98,7 +108,6 @@
                                 
                             
                             </div>
-                            
                         </div>
                         
                     </div>
@@ -109,7 +118,6 @@
 
             </div>
             <!-- End of Main Content -->
-            
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

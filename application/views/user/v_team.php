@@ -140,10 +140,18 @@
 				<br><br><br><h3>'. $pm->nama . '</h3>
 					<br>
 					<div class="about-para">
-						<b>Head Doctor/Medical</b>
+					<b><p style="text-indent:45px">'. $pm->jabatan . '</p></b>
 						<p>Alumni : '. $pm->alumni . '</p>
-						
+						<p>Seminar and course : </p>
+						<div class="arrow">
+						<ul>
+							<li><span class="fa fa-paw dog-arrow" aria-hidden="true"></span>
+								<p>'. $pm->alumni . '</p>
+							</li>
+						</ul>
 					</div>
+					</div>
+					
 				</div>
 				<br>
 					<img style="width: 300px; height:400px;"  src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '" class="rounded-circle"">

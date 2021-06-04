@@ -70,7 +70,10 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item active">
+          <!-- Divider -->
+          <hr class="sidebar-divider d-none d-md-block">
+
+            <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('Petugas/katalog'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Catalog</span></a>

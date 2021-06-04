@@ -115,37 +115,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
-						<span class="fa fa-heartbeat banner-icon" aria-hidden="true"></span>
+						<span class="fa fa-commenting-o banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class=" white-shadow">
-						<h4>Vaksinasi</h4>
+					<h4>Konsultasi </h4>
 						<p>
 						</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
-				
-				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<!--<span class="fa fa-smile-o banner-icon" aria-hidden="true"></span>-->
-					</div>
-					<div class="white-shadow">
-						<!--<h4>Sterillisasi </h4>-->
-						<p></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<span class="fa fa-commenting-o banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class="white-shadow">
-						<h4>Konsultasi </h4>
-						<p></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
 						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->

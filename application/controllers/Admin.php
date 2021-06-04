@@ -77,8 +77,10 @@ class Admin extends CI_Controller {
 		else{
 			$ins = array(
 				'nama' => $this->input->post('nama'),
+				'jabatan' => $this->input->post('jabatan'),
 				'alumni' => $this->input->post('alumni'),
 				'foto' => $this->upload->data('file_name'),
+				'seminar' => $this->input->post('seminar'),
 				'id_level' => $this->input->post('id_level'),
 			);
 			$this->am->ins('petugas', $ins);

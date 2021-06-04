@@ -44,7 +44,7 @@
                                 
 								echo '<tr>
 										<td>' . $no . '</td>
-                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-primary btn-icon-split">
+                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
