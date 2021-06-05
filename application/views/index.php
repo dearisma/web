@@ -523,7 +523,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //portfolio -->
-	<!--price table-->
+	<!--price table
 	<div class="price-table" id="price">
 		<div class="container">
 			<h3 class="title clr ">Price</h3>
@@ -584,7 +584,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</div>
 	</div>
-	<!--//price table-->
+	price table-->
 	<!-- testimonials -->
 	<div class="testimonials" id="testimonials">
 		<div class="container">
