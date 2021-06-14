@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Petugas </title>
+    <title>Dokter </title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,6 +36,19 @@
                 </div>
                 <div class="sidebar-brand-text mx-3">Sekar Satwa <sup></sup></div>
             </a>
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('Dokter/index'); ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Beranda</span></a>
+            </li>
+            
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('Dokter/forum'); ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Konsultasi</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">

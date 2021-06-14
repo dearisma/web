@@ -75,14 +75,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="slider-img ">
 							<div class="container">
 								<div class="slider-info">
-									<h4><span class="home-banner">P</span>et<span class="home-banner">&</span>Cares <span class="home-banner"></span>
+									<h4><span class="home-banner">P</span>eduli<span class="home-banner">P</span>eliharaanmu <span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span> </h4>
 									<p></p>
-									<div class="outs_more-buttn">
+									<!--<div class="outs_more-buttn">
 										<a href="<?= base_url('Login/index'); ?>" data-toggle="modal" data-target="#myModal">Reservasi Now</a>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</li>
@@ -220,7 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="about-top-grids">
 				<div class="col-md-7 about-top-grid">
-					<h2>About Us </h2>
+					<h2>Tentang Kami </h2>
 					
 					<div class="about-para"><br>
 						<p style="text-indent:45px">Klinik Sekar Satwa merupakan sebuah klinik hewan di Kota Blitar yang dikelola langsung oleh drh.Sekar Lolita. Kami memberikan pelayanan
@@ -264,36 +264,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--services-->
 	<div class="services" id="services">
 		<div class="container">
-			<h3 class="title clr">Services</h3>
+			<h3 class="title clr">Pelayanan & Reservasi</h3>
 
-			<div class="banner-bottom-girds ">
+			
+				
 				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<span class="fa fa-scissors banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class=" white-shadow">
-						<h4>Grooming</h4>
-						<p></p>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class=" white-shadow">
-						<h4>USG</h4>
-						<p>
-							</p>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
+					<div class=" left-icon-grid"><br><br>
 						<span class="fa fa-home banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class=" white-shadow">
-						<h4>Penitipan Hewan</h4>
+						<h4> <a href="<?= base_url() ?>Login/index"> Penitipan Hewan</h4>
 						<p>
 							</p>
 						<div class="clearfix"> </div>
@@ -304,27 +284,103 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="fa fa-flask banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class="white-shadow">
-						<h4>Pemeriksaan Laboratorium</h4>
+						<h4><a href="<?= base_url() ?>Login/index">Pemeriksaan </h4>
 						<p></p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class="left-icon-grid">
-						<span class="fa fa-medkit banner-icon" aria-hidden="true"></span>
+					<div class=" left-icon-grid">
+						<span class="fa fa-scissors banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class=" white-shadow">
-						<h4>Operasi</h4>
+						<h4> <a href="<?= base_url() ?>Login/index"> Grooming</h4>
+						
 						<p></p>
+						<div class="clearfix"> </div>
+					</div>
+				</div><div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+					<!--	<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>USG</h4>-->
+						<p>
+							</p>
+						<div class="clearfix"> </div>
+					</div>
+				</div><div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+					<!--	<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>USG</h4>-->
+						<p>
+							</p>
+						<div class="clearfix"> </div>
+					</div>
+				</div><div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+					<!--	<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>USG</h4>-->
+						<p>
+							</p>
+						<div class="clearfix"> </div>
+					</div>
+				</div><div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+					<!--	<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>USG</h4>-->
+						<p>
+							</p>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid"><br><br>
+						<span class="fa fa-commenting-o banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class="white-shadow">
+						<h4><a href="<?= base_url() ?>Login/index">Konsultasi </h4>
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
-						<span class="fa fa-heartbeat banner-icon" aria-hidden="true"></span>
+					<!--	<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class=" white-shadow">
-						<h4>Vaksinasi</h4>
+						<h4>USG</h4>-->
+						<p>
+							</p>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class="left-icon-grid">
+						<!--<span class="fa fa-medkit banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>Operasi</h4>-->
+						<p></p>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				
+				<p><p></p></p>
+				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-heartbeat banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4><a href="<?= base_url() ?>Login/index">Vaksinasi</h4>-->
 						<p>
 						</p>
 					</div>
@@ -334,30 +390,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
-						<span class="fa fa-smile-o banner-icon" aria-hidden="true"></span>
+						<!--<span class="fa fa-smile-o banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class="white-shadow">
-						<h4>Sterillisasi </h4>
+						<h4>Sterillisasi </h4>-->
 						<p></p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
+				
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
-						<span class="fa fa-commenting-o banner-icon" aria-hidden="true"></span>
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class="white-shadow">
-						<h4>Konsultasi </h4>
-						<p></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class="white-shadow">
-						<h4>Scalling Gigi Anjing </h4>
+						<h4>Scalling Gigi Anjing </h4>-->
 						<p></p>
 					</div>
 					<div class="clearfix"> </div>
@@ -366,161 +413,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!--//services-->
-	<div class="portfolio" id="gallery">
-
-		<h3 class="title">Our Gallery</h3>
-
-		<div class="sap_tabs">
-			<div id="horizontalTab">
-				<ul class="resp-tabs-list">
-					<li class="resp-tab-item"><span>All</span></li>
-					<li class="resp-tab-item"><span>Pets 1</span></li>
-					<li class="resp-tab-item"><span>Pets 2</span></li>
-					<li class="resp-tab-item"><span>Pets 3</span></li>
-				</ul>
-				<div class="clearfix"> </div>
-				<div class="resp-tabs-container">
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-							<img src='assets/images/gal1.jpg' data-big-src='assets/images/gal1.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-							<img src='<?php echo base_url() ?>assets/images/g2.jpg' data-big-src='<?php echo base_url() ?>assets/images/g2.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-							<img src='<?php echo base_url() ?>assets/images/g10.jpg' data-big-src='<?php echo base_url() ?>assets/images/g10.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='<?php echo base_url() ?>assets/images/g4.jpg' data-big-src='<?php echo base_url() ?>assets/images/g4.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6  portfolio-grids">
-							<div class="gallery-grid">
-								<img src='<?php echo base_url() ?>assets/images/g5.jpg' data-big-src='<?php echo base_url() ?>assets/images/g5.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g6.jpg' data-big-src='images/g6.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g8.jpg' data-big-src='images/g8.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g11.jpg' data-big-src='images/g11.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g1.jpg' data-big-src='images/g1.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g10.jpg' data-big-src='images/g10.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g8.jpg' data-big-src='images/g8.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g11.jpg' data-big-src='images/g11.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g5.jpg' data-big-src='images/g5.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g7.jpg' data-big-src='images/g7.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g6.jpg' data-big-src='images/g6.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g7.jpg' data-big-src='images/g7.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="tab-1 resp-tab-content">
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g2.jpg' data-big-src='images/g2.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g6.jpg' data-big-src='images/g6.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g4.jpg' data-big-src='images/g4.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-6 portfolio-grids">
-							<div class="gallery-grid">
-								<img src='images/g7.jpg' data-big-src='images/g7.jpg' class="img-responsive" alt=" " />
-								<p style='opacity:0;display:none'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //portfolio -->
+	
 	
 	
 	

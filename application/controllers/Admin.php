@@ -28,9 +28,10 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
+		$data['log'] = $this->session->userdata('data_session');
 		if ($this->session->userdata('data_session') == NULL) {
 			redirect('Welcome', 'refresh');
-		}else{
+		}else{ 
 			error_reporting(0);
 			$cari = $_GET['keyword'];
 			if ($cari != null) {
@@ -41,66 +42,51 @@ class Admin extends CI_Controller {
 			}
 		}	
 		$data['level'] = $this->am->getData('level')->result();
+		
+		$data['l'] = $this->am->getData('level')->result();
 		$this->load->view('template/header_admin', $data);
 		
 		$this->load->view('template/topbar');
 		$this->load->view('Admin/index', $data);
 	}
-	public function user()
-	{
-		error_reporting(0);
-		$cari = $_GET['keyword'];
-		if ($cari != null) {
-			$data['data_user'] = $this->am->search($cari)->result();
-		}else{
-			$w = array ('user.id_level');
-			$data['data_user'] = $this->am->getDataId('user', $w)->result();
-		}	
-		$data['lv'] = $this->am->getData('level')->result();
-		$this->load->view('template/header_admin', $data);
-		$this->load->view('template/topbar');
-		$this->load->view('Admin/index', $data);
-	}
-	
+
 	public function tambah(){
 		
-		$config['upload_path'] = './assets/uploads/';
-		$config['allowed_types'] = 'gif|jpg|png';
 		
-		$this->load->library('upload', $config);
-		
-		if ( ! $this->upload->do_upload('foto')){
-			$error = array('error' => $this->upload->display_errors());
-			$this->session->set_flashdata('pesan', $error['error']);
-			redirect('Petugas','refresh');
-		}
-		else{
 			$ins = array(
-				'nama' => $this->input->post('nama'),
+				'nama_petugas' => $this->input->post('nama_petugas'),
 				'jabatan' => $this->input->post('jabatan'),
 				'alumni' => $this->input->post('alumni'),
-				'foto' => $this->upload->data('file_name'),
-				'seminar' => $this->input->post('seminar'),
+				
 				'id_level' => $this->input->post('id_level'),
 			);
 			$this->am->ins('petugas', $ins);
 			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
 			redirect('Admin','refresh');
-		}	
-	}
-	public function tambah_user()
-	{
-			$ins = array(
-				'username' => $this->input->post('username'),
-				'password' => $this->input->post('alumni'),
-				'id_level' => $this->input->post('id_level'),
-			);
-			$this->am->ins('user', $ins);
-			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
-			redirect('Admin','refresh');
-			
 		
+	 }
+	 public function hapus()
+	{
+		$w = array ('id_petugas' => $this->uri->segment(3));
+		$this->am->del('petugas',$w);
+		
+		$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus!');
+		redirect('Admin','refresh');
 	}
-	
-	
+
+	public function update()
+	{
+		$w = array('id_petugas' => $this->uri->segment(3));
+		{
+			$ins = array(
+				'nama_petugas' => $this->input->post('nama_petugas'),
+				'jabatan' => $this->input->post('jabatan'),
+				'alumni' => $this->input->post('alumni'),		
+				'id_level' =>  $this->input->post('id_level'),
+			);
+		}	
+		$this->am->updData('petugas', $ins, $w);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate!');
+		redirect('Admin','refresh');
+	}
 }

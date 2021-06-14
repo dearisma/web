@@ -40,6 +40,7 @@ class Petugas extends CI_Controller {
 			$data['data_grooming'] = $this->pm->getDataId_Reservasi('grooming', $w)->result();
 		}	
 		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+		$data['grooming'] = $this->pm->getData_Reservasi('grooming')->result();
 			$this->load->view('template/header_petugas', $data);
 			
 			$this->load->view('template/topbar');
@@ -54,9 +55,11 @@ class Petugas extends CI_Controller {
 			$data['data_grooming'] = $this->pm->search_Reservasi($cari)->result();
 		}else{
 			$w = array ('grooming.id_wali');
+			
 			$data['data_grooming'] = $this->pm->getDataId_Reservasi('grooming', $w)->result();
 		}	
 		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+		$data['kategori'] = $this->pm->getData_Reservasi('kategori')->result();
 		$this->load->view('template/header_petugas', $data);
 		$this->load->view('template/topbar');
 		$this->load->view('Admin/Petugas', $data);
@@ -129,8 +132,146 @@ class Petugas extends CI_Controller {
 			$this->pm->ins('katalog', $ins);
 			$this->session->set_flashdata('pesan', 'Data Berhasil ditambahkan!');
 			redirect('Petugas/katalog','refresh');
+		}
 	}
-}
+
+
+		public function status_upd()
+		{
+			$w = array('id_grooming' => $this->uri->segment(4)); 
+			//0 : base url
+			//1 controller
+			//2 function
+			//3 id
+			//4 
+			$x = $this->pm->getData('grooming', $w)->row();
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				$updd = array('status' => "Dikonfirmasi");
+				$we = array('id_grooming' => $x->id_grooming);
+				$this->pm->upd('grooming', $updd, $we);
+			} 
+			 $sts = $this->uri->segment(3);
+			
+			$upd = array('status' => 'Dikonfirmasi');
+			$w = array('id_grooming' => $this->uri->segment(4));
+			$this->pm->upd('grooming', $upd, $w);
+
+			$data = $this->pm->getDataId_Reservasi('grooming', $w)->row();
+			$sts = $this->uri->segment(3);
+
+			$this->session->set_flashdata('pesan', 'Pengajuan telah di Update!');
+			// $link = "<script>window.open('', '_blank')</script>";
+			if ( $this->uri->segment(3) == "konfirmasi") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . 
+				'&text=Kami dari Klinik Sekar Satwa ingin menginformasikan bahwa pengajuan reservasi barang Anda diterima. Silahkan datang ke klinik sebelum pukul 19.00")</script>';
+			
+			} elseif($this->uri->segment(3) == "Ditolak1") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . '&text=Assalamaualaikum,Peminjaman barang yang anda ajukan ditolak.Mohon bersabar ini ujian","_blank")</script>';
+			}
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				echo $link;
+			}
+			// header("location:https://web.whatsapp.com/send?phone='.$data->no_hp.'&text=Assalamaualaikum,Peminjaman barang yang anda ajukan diterima. Segera ambil barang di Diskominfotik");
+			 redirect('Petugas/grooming', 'refresh');
+		}
+		
+		public function upd_penitipan()
+		{
+			$w = array('id_hotel' => $this->uri->segment(4)); 
+			//0 : base url
+			//1 controller
+			//2 function
+			//3 id
+			//4 
+			$x = $this->pm->getData('hotel', $w)->row();
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				$updd = array('status' => "Dikonfirmasi");
+				$we = array('id_hotel' => $x->id_hotel);
+				$this->pm->upd('hotel', $updd, $we);
+			} 
+			 $sts = $this->uri->segment(3);
+			
+			$upd = array('status' => 'Dikonfirmasi');
+			$w = array('id_hotel' => $this->uri->segment(4));
+			$this->pm->upd('hotel', $upd, $w);
+
+			$data = $this->pm->getDataId_Reservasi('hotel', $w)->row();
+			$sts = $this->uri->segment(3);
+
+			$this->session->set_flashdata('pesan', 'Pengajuan telah di Update!');
+			// $link = "<script>window.open('', '_blank')</script>";
+			if ( $this->uri->segment(3) == "konfirmasi") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . 
+				'&text=Kami dari Klinik Sekar Satwa ingin menginformasikan bahwa pengajuan reservasi barang Anda diterima. Silahkan datang ke klinik sebelum pukul 19.00")</script>';
+			
+			} elseif($this->uri->segment(3) == "Ditolak1") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . '&text=Assalamaualaikum,Peminjaman barang yang anda ajukan ditolak.Mohon bersabar ini ujian","_blank")</script>';
+			}
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				echo $link;
+			}
+			// header("location:https://web.whatsapp.com/send?phone='.$data->no_hp.'&text=Assalamaualaikum,Peminjaman barang yang anda ajukan diterima. Segera ambil barang di Diskominfotik");
+			 redirect('Petugas/penitipan', 'refresh');
+		}
+		public function upd_periksa()
+		{
+			$w = array('id_periksa' => $this->uri->segment(4)); 
+			//0 : base url
+			//1 controller
+			//2 function
+			//3 id
+			//4 
+			$x = $this->pm->getData('periksa', $w)->row();
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				$updd = array('status' => "Dikonfirmasi");
+				$we = array('id_periksa' => $x->id_periksa);
+				$this->pm->upd('periksa', $updd, $we);
+			} 
+			 $sts = $this->uri->segment(3);
+			
+			$upd = array('status' => 'Dikonfirmasi');
+			$w = array('id_periksa' => $this->uri->segment(4));
+			$this->pm->upd('periksa', $upd, $w);
+
+			$data = $this->pm->getDataId_Reservasi('periksa', $w)->row();
+			$sts = $this->uri->segment(3);
+
+			$this->session->set_flashdata('pesan', 'Pengajuan telah di Update!');
+			// $link = "<script>window.open('', '_blank')</script>";
+			if ( $this->uri->segment(3) == "konfirmasi") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . 
+				'&text=Kami dari Klinik Sekar Satwa ingin menginformasikan bahwa pengajuan reservasi barang Anda diterima. Silahkan datang ke klinik sebelum pukul 19.00")</script>';
+			
+			} elseif($this->uri->segment(3) == "Ditolak1") {
+				$link = '<script>window.open("https://web.whatsapp.com/send?phone=' . $data->no_telp . '&text=Assalamaualaikum,Peminjaman barang yang anda ajukan ditolak.Mohon bersabar ini ujian","_blank")</script>';
+			}
+
+			if ($this->uri->segment(3) == "konfirmasi" ) {
+				echo $link;
+			}
+			// header("location:https://web.whatsapp.com/send?phone='.$data->no_hp.'&text=Assalamaualaikum,Peminjaman barang yang anda ajukan diterima. Segera ambil barang di Diskominfotik");
+			 redirect('Petugas/pemeriksaan', 'refresh');
+		}
+		public function print(){
+		$w = array ('id_grooming' => $this->uri->segment(3));
+			
+			$data['data_grooming'] = $this->pm->getDataId_Reservasi('grooming', $w)->result();
+		// $w = array('id_grooming' => $this->uri->segment(4)); 
 	
+		// $data = $this->pm->getDataId_Reservasi('grooming', $w)->row();
+		$mpdf = new \Mpdf\Mpdf();
+		$html = $this->load->view('Reservasi/print', $data, TRUE);
+
+		$mpdf->WriteHTML($html);
+		// $mpdf->Output();
+		$mpdf->Output('Cetak Kartu.pdf', 'D');
+
+	}
+		
 
 }

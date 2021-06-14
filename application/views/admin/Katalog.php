@@ -84,28 +84,23 @@
 										<td>' . $pm->deskripsi . '</td>
 										<td> <img style="width: 200px; height:200px;" src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '"></td>	
                                        
-                                        <td> 
-                                        <a href="" class="btn btn-success btn-circle"data-toggle="modal" data-target="#update_pegawai' . $dt->id_barang . '"  data-popup="tooltip" data-placement="top" >
-                                        <i class="fas fa-edit"></i> </a>
-                                            <a href="#edit" class="btn btn-danger btn-circle"  data-toggle="modal" data-target="#update_pegawai' . $dt->id_barang . '"  data-popup="tooltip" data-placement="top" >
-                                            <i class="fas fa-trash"></i> </a>
-                                        </td>
+                           
                                        </tr>';
-							}
-							?>
+                                        }
+                                        ?>
                                     </tbody>
-                                </table>
-                                
-                            
+                                </table>    
+                            </div> 
+                            <?php if ($this->session->flashdata('pesan') != null) : ?>
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button><?= $this->session->flashdata('pesan'); ?>
                             </div>
-                            
+			            <?php endif ?>
                         </div>
-                        
                     </div>
-
                 </div>
-                
-                
 
             </div>
             <!-- End of Main Content -->
@@ -138,15 +133,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

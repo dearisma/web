@@ -11,10 +11,12 @@
                 <!-- Begin Page Content -->
                          
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="col-md">
+                    <div class="card shadow mb-1">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Grooming Sekar Satwa</h6>
                         </div>
+                       
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -38,17 +40,23 @@
 							$no = 0;
 							foreach ($data_grooming as $pm) {
 								$no++;
-                                if ($data_grooming->status == "mengajukan") {
-									$sts = "dikonfirmasi";
-                                }
+                                if ($pm->status == "mengajukan") {
+									$sts = "konfirmasi";
                                 
 								echo '<tr>
 										<td>' . $no . '</td>
-                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-success btn-icon-split">
+                                        <td><a href="'. base_url('Petugas/status_upd/'). $sts . '/'  .$pm->id_grooming .'" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
+                                            <a href="'.  base_url('Petugas/print/') .$pm->id_grooming . '" class="btn btn-success btn-icon-split">
+                                            
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-print"></i>
+                                                
+                                                 
+                                        </td>
                                         </span>
-                                        <span class="text">Konfirmasi</span>
+                                       
                                     </a> 
                                         <td>' .  $pm->tgl_grooming .  '</td>		
 										<td>' . $pm->nama . '</td>
@@ -58,13 +66,34 @@
 										
 									  </tr>';
                                 
-							}
+							    }else if ($pm->status == "Dikonfirmasi") {
+									
+                                     echo '<tr>
+                                     <td>' . $no . '</td>
+                                     <td>
+                                         <a href="'.  base_url('Petugas/print/') .$pm->id_grooming . '" class="btn btn-success btn-icon-split">
+                                         <span class="icon text-white-50">
+                                             <i class="fas fa-print"></i>
+                                             
+                                              
+                                     </td>
+                                        </span>
+                                     <td>' .  $pm->tgl_grooming .  '</td>		
+                                     <td>' . $pm->nama . '</td>
+                                     <td>' . $pm->alamat . '</td>
+                                     <td>' . $pm->no_telp . '</td>
+                                     <td>' . $pm->hewan . '</td>
+                                </tr>';
+                                        
+                                    }
+                                }
 							?>
                                     </tbody>
+                                    
                                 </table>
                                 
-                            
                             </div>
+                            
                         </div>
                         
                     </div>
@@ -103,15 +132,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

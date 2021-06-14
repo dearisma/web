@@ -27,11 +27,20 @@ class Petugas_model extends CI_Model {
 	{
 		return $this->db->get($t);
 	}
+	
+	
 
-	public function getDataId_Reservasi($t, $w)
+	public function getDataId_Rm($t, $w)
 	{
 	
 		$this->db->join('wali_pasien', 'wali_pasien.id_wali = ' . $t . '.id_wali', 	'left');
+		$this->db->join('petugas', 'petugas.id_petugas = ' . $t . '.id_petugas', 	'left');
+		$this->db->where($w);
+		return $this->db->get($t);
+	}
+	public function getDataId_Reservasi($t, $w)
+	{
+	$this->db->join('wali_pasien', 'wali_pasien.id_wali = ' . $t . '.id_wali', 	'left');
 		$this->db->where($w);
 		return $this->db->get($t);
 	}
@@ -39,6 +48,15 @@ class Petugas_model extends CI_Model {
 	public function ins($t, $object)
 	{
 		$this->db->insert($t, $object);
+	}
+	public function upd($t, $object, $w)
+	{
+		$this->db->update($t, $object, $w);
+	}
+		
+	public function updData($t, $object, $w)
+	{
+		$this->db->update($t, $object, $w);
 	}
 
 }

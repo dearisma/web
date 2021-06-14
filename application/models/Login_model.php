@@ -29,6 +29,7 @@ class Login_model extends CI_Model {
 		
    		return $this->db->insert($t, $data);
 	}
+
 	
 }
 /* End of file Login_model.php */

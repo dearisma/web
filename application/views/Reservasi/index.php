@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Klinik Sekar Satwa</title>
+	<title>Reservasi</title>
 
 	<link rel="icon" type="image/png" sizes="96x96" href="<?= base_url() ?>assets/images/logo3.png">
 	<!--meta tags -->
@@ -40,11 +40,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 						<nav>
 							<ul class="nav navbar-nav">
-								<li><a href="<?= base_url('Welcome/index'); ?>">Home</a></li>
-								<li><a href="<?= base_url('Team/index'); ?>">Our Team</a></li>
-								<li><a href="<?= base_url('Services/index'); ?>" class="scroll">Services</a></li>
-								<li><a href="#gallery" class="scroll">Katalog</a></li>
-								<li><a href="<?= base_url('Login/index'); ?>">Login</a></li>
+								
+								<li><a href="<?= base_url('Login/Logout'); ?>">Keluar</a></li>
 								<div></div><br>
 							</ul>
 						</nav>
@@ -55,9 +52,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div></div>
 <div></div>
 <br>
-			<br><br><h3 class="title clr">Services</h3>
+			<br><br><h3 class="title clr">Pelayanan & Reservasi</h3>
 
 			<div class="banner-bottom-girds ">
+				
+				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid"><br>
+					<a href="<?= base_url('Reservasi/penitipan'); ?>" a>
+						<span class="fa fa-home banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class=" white-shadow">
+						<h4>Penitipan Hewan</h4>
+						<p>
+							</p>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid"><br><br>
+					<a href="<?= base_url('Reservasi/pemeriksaan'); ?>" a>
+						<span class="fa fa-flask banner-icon" aria-hidden="true"></span>
+					</div>
+					<div class="white-shadow">
+						<h4>Pemeriksaan </h4>
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
 				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
 					<div class=" left-icon-grid">
 					<a href="<?= base_url('Reservasi/grooming'); ?>" a>
@@ -70,40 +91,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-						<!--<span class="fa fa-stethoscope  banner-icon" aria-hidden="true"></span>-->
-					</div>
-					<div class=" white-shadow">
-						<!--<h4>USG</h4>-->
-						<p>
-							</p>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-					<a href="<?= base_url('Reservasi/penitipan'); ?>" a>
-						<span class="fa fa-home banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class=" white-shadow">
-						<h4>Penitipan Hewan</h4>
-						<p>
-							</p>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
-					<a href="<?= base_url('Reservasi/pemeriksaan'); ?>" a>
-						<span class="fa fa-flask banner-icon" aria-hidden="true"></span>
-					</div>
-					<div class="white-shadow">
-						<h4>Pemeriksaan </h4>
-						<p></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4  col-sm-6 col-xs-6  its-banner-grid">
 					<div class="left-icon-grid">
 						<!--<span class="fa fa-medkit banner-icon" aria-hidden="true"></span>-->
 					</div>
@@ -114,7 +101,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
-					<div class=" left-icon-grid">
+					<div class=" left-icon-grid"><br><br><br><br><br>
+					<a href="<?= base_url('Reservasi/konsultasi'); ?>" a>
 						<span class="fa fa-commenting-o banner-icon" aria-hidden="true"></span>
 					</div>
 					<div class=" white-shadow">
@@ -136,7 +124,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="clearfix"> </div>
 				</div>
-			</div>
+			</div><div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->
+					</div>
+					<div class="white-shadow">
+						<!--<h4>Scalling Gigi Anjing </h4>-->
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div><div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->
+					</div>
+					<div class="white-shadow">
+						<!--<h4>Scalling Gigi Anjing </h4>-->
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div><div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->
+					</div>
+					<div class="white-shadow">
+						<!--<h4>Scalling Gigi Anjing </h4>-->
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div><div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->
+					</div>
+					<div class="white-shadow">
+						<!--<h4>Scalling Gigi Anjing </h4>-->
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div><div class="col-md-4 col-sm-6 col-xs-6  its-banner-grid">
+					<div class=" left-icon-grid">
+						<!--<span class="fa fa-user-md banner-icon" aria-hidden="true"></span>-->
+					</div>
+					<div class="white-shadow">
+						<!--<h4>Scalling Gigi Anjing </h4>-->
+						<p></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			
+			
 		</div>
 	</div>
 <div></div>
