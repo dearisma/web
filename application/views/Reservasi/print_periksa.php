@@ -21,18 +21,22 @@
 	<table>
 		<tr>
 			<th>NO</th>
-			<th>TGL GROOMING</th>
-			<th>NAMA PEMILIK</th>
-			<th>HEWAN</th>
+			<th>Tanggal</th>
+			<th>Nama</th>
+			<th>Hewan</th>
+			<th>Anamnesa</th>
 		</tr>
 		<?php $no = 1;
-		foreach ($grooming as $dt) : ?>
+		foreach ($data_periksa as $dt) : ?>
 			<tr>
-			<td><?= $no ?></td>
-			<td><?php $myDateTime = DateTime::createFromFormat('Y-m-d', $dt->tgl_grooming); $a = $myDateTime->format('d-m-Y'); echo $a ?></td>
+			<td><?= $dt->id_periksa ?></td>
+			<td><?php $myDateTime = DateTime::createFromFormat('Y-m-d', $dt->tgl_periksa); $a = $myDateTime->format('d-m-Y'); echo $a ?></td>
 									
-			<td><?= $dt->id_wali ?></td>
+			<td><?= $dt->nama ?></td>
 			<td><?= $dt->hewan ?></td>
+			
+			<td><?= $dt->keluhan ?></td>
+			
 									
 			</tr>
 		<?php $no++;

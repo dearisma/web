@@ -77,6 +77,14 @@
                     <span>Katalog</span></a>
             </li>
             
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <li class="nav-item active">
+                <a class="nav-link" href="<?= base_url('FullCalendar/index'); ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Vaksin</span></a>
+            </li>
+
           
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
