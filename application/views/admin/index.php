@@ -27,15 +27,13 @@
                                 <form action="<?= base_url('Admin/tambah') ?>" method="post" enctype="multipart/form-data">
                                     <div class="modal-body">
                                         <label for="nama">Nama </label>
-                                        <input type="text" id="nama" name="nama" class="form-control" required><br>
+                                        <input type="text" id="nama_petugas" name="nama_petugas" class="form-control" required><br>
                                         <label for="nama">Jabatan </label>
                                         <input type="text" id="jabatan" name="jabatan" class="form-control" required><br>
                                         <label for="nama">Alumni </label>
                                         <input type="text" id="alumni" name="alumni" class="form-control" required><br>
-                                        <label for="nama">Seminar </label>
-                                        <input type="text" id="alumni" name="alumni" class="form-control" required><br>
-                                        <label for="foto">Foto </label>
-                                        <input type="file" id="foto" name="foto" class="form-control" required><br>
+                                       
+                                       
                                         <label for="id_level">Status</label>
                                         <select name="id_level" id="id_level" class="form-control" required>
                                             <?php foreach ($level as $level) : ?>
@@ -52,41 +50,7 @@
                         </div>
                             
                      </div>
-                     <div class="col-md">
-                                <a href="#tambahakun" style="float: left;" class="btn btn-primary " data-toggle="modal">
-                                <i class="fas fa-plus"></i>
-                                <span class="icon text-white-50"></span>Tambah Akun Petugas</a><br><br><br>
-                                
-                            </div>
-                        <div class="modal fade" id="tambahakun">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    
-                                </div>
-                                <form action="<?= base_url('User/tambah_user') ?>" method="post" enctype="multipart/form-data">
-                                    <div class="modal-body">
-                                        <label for="username">Username </label>
-                                        <input type="text" id="username" name="username" class="form-control" required><br>
-                                        <label for="password">Password </label>
-                                        <input type="password" id="password" name="password" class="form-control" required><br>
-                                        <label for="id_level">Level</label>
-                                        <select name="id_level" id="id_level" class="form-control" required>
-                                            <?php foreach ($level as $level) : ?>
-                                                <option value="<?= $level->id_level ?>"><?= $level->status ?></option>
-                                            <?php endforeach; ?>
-                                        </select><br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <input type="submit" name="simpan" value="Simpan" class="btn btn-success">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        </div>
-
+                   
                         <p class="mb-4"></a></p>
 
                         <?php if ($this->session->flashdata('pesan') != null) : ?>
@@ -110,8 +74,9 @@
                                             <th>NO</th>
                                             <th>NAMA</th>
                                             <th>ALUMNI</th>
-                                            <th>FOTO</th>
+                                           
                                             <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,16 +87,54 @@
 								$no++;
 								echo '<tr>
 										<td>' . $no . '</td>
-										<td>' . $pm->nama . '</td>
+										<td>' . $pm->nama_petugas . '</td>
 										<td>' . $pm->alumni . '</td>
-										<td> <img style="width: 200px; height:200px;" src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '"></td>	
+										
 										<td>' . $pm->status . '</td>	
-									  </tr>';
+                                        <td>
+										
+                                        <a href="" class="btn btn-warning" data-toggle="modal" data-target="#update' . $pm->id_petugas . '"  data-popup="tooltip" data-placement="top" >Update</a> 
+                                        <a href="' . base_url('Admin/hapus/' . $pm->id_petugas) . '" class="btn btn-danger">Delete</a></td>
+                                        
+                                        </td>
+                                        
+                                    </tr>';
 							}
 							?>
                                     </tbody>
                                 </table>
-                                
+                                <?php $no = 0;
+			                    foreach ($data_petugas as $pm) : $no++; ?>
+                                <div class="modal fade " id="update<?= $pm->id_petugas; ?>">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                
+                                            </div>
+                                            <form action="<?= base_url('Admin/update/') . $pm->id_petugas ?>" method="post" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <label for="nama">Nama </label>
+                                                    <input type="text" id="nama_petugas" name="nama_petugas" class="form-control"value="<?= $pm->nama_petugas ?>" required><br>
+                                                    <label for="nama">Jabatan </label>
+                                                    <input type="text" id="jabatan" name="jabatan" class="form-control"value="<?= $pm->jabatan ?>" required><br>
+                                                    <label for="nama">Alumni </label>
+                                                    <input type="text" id="alumni" name="alumni" class="form-control" value="<?= $pm->alumni ?>"required><br>
+                                                    <!-- <label for="nama">Status </label> -->
+                                                    <input type="hidden" id="id_level" name="id_level" class="form-control" value=" <?= $pm->id_level ?>" readonly> <br>
+                                                    
+                                                    </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    <input type="submit" name="simpan" value="Simpan" class="btn btn-success">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                        
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
                             
                             </div>
                         </div>
@@ -140,43 +143,7 @@
 
                 </div>
                 
-                <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Akun</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Username</th>
-                                            <th>Nama Petugas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    <img src="" alt="">
-							<?php
-							$no = 0;
-							foreach ($data_user as $u) {
-								$no++;
-								echo '<tr>
-										<td>' . $no . '</td>
-										<td>' . $u->username . '</td>
-										<td>' . $u->status . '</td>
-									  </tr>';
-							}
-							?>
-                                    </tbody>
-                                </table>
-                                
-                            
-                            </div>
-                        </div>
-                    </div>
-                <!-- /.container-fluid -->
-                
-
+               
             </div>
             <!-- End of Main Content -->
 
@@ -207,15 +174,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

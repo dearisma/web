@@ -7,10 +7,10 @@
 						<div class="slider-img">
 							<div class="container">
 								<div class="slider-info">
-									<h4> <span class="home-banner">O</span>ur <span class="home-banner">S</span>ervices <span class="home-banner"></span>
+									<h4> <span class="home-banner"></span><span class="home-banner">K</span>atalog <span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span></h4>
-									<p>We provide reliable veterinary services for your pets</p>
+									<p>Kami menyediakan berbagai kebutuhan hewan anda</p>
 									<div class="outs_more-buttn">
 									</div>
 								</div>

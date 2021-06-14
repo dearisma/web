@@ -1,3 +1,4 @@
+	
 		<!-- Slideshow 4 -->
 		<div class="slider">
 			<div class="callbacks_container">
@@ -6,10 +7,10 @@
 						<div class="slider-img">
 							<div class="container">
 								<div class="slider-info">
-									<h4> <span class="home-banner">O</span>ur <span class="home-banner">S</span>ervices <span class="home-banner"></span>
+									<h4> <span class="home-banner">P</span>elayanan <span class="home-banner">K</span>ami <span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span></h4>
-									<p>We provide reliable veterinary services for your pets</p>
+									<p></p>
 									<div class="outs_more-buttn">
 									</div>
 								</div>
@@ -29,180 +30,106 @@
 		<!-- //banner -->
 	
 	</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
 	
-	<div class="about" id="about">
-		<div class="container">
-			<div class="about-top-grids">
-				<div class="col-md-7 about-top-grid">
-					<h2>Grooming <span class="fa fa-paw" aria-hidden="true"></span></h2>
-					<div class="about-para"><br>
-						<p style="text-indent:45px">Anda tidak perlu lagi repot dan takut untuk melakukan pet grooming atau perawatan kulit dan bulu hewan kesayangan anda. Kami Klinik Sekar satwa memberikan pelayanan Pet Grooming untuk Mandi Sehat dan mandi Perawatan ( baik untuk mencegah ada Kutu pada bulu ataupun Jamuran pada Kulit ) pada hewan kesayangan anda.</p>
-						<p style="text-indent:45px">Dengan didukung oleh tim ahli dan profesional kami serta ruangan dan peralatan yang memadai, anda tidak akan kecewa dengan pelayanan kami, hewan kesayangan anda akan mendapatkan perawatan  sehingga akan terlihat lebih cantik dan menarik dan tetap dalam kondisi sehat.</p>
-					</div>
-					<button type="button" class="btn btn-primary"><a href="<?php echo base_url('Reservasi/index'); ?>">Reservasi Now</a></button>
+	<meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="<?php echo base_url() ?>assets2/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-				</div>
-				
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
-					</div>
-				</div>
-			</div>
+  <!-- Vendor CSS Files -->
+  <!-- <link href="<?php echo base_url() ?>assets2/vendor/aos/aos.css" rel="stylesheet"> -->
+  <!-- <link href="<?php echo base_url() ?>assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="<?php echo base_url() ?>assets2/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets2/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets2/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="<?php echo base_url() ?>assets2/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="<?php echo base_url() ?>assets2/css/style.css" rel="stylesheet">
+	<section id="hero" class="d-flex align-items-center">
+
+	<div class="container">
+	<div class="row gy-4">
+		<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+		<h1>Penitipan<span class="fa fa-paw" aria-hidden="true"></span></h1>
+		<h2>Kami menyediakan ruang yang difasilitasi dengan peralatan modern dan higienis yang baik untuk penyakit infeksius maupun non infeksius yang dipantau oleh kamera pengintai. Kami juga memberikan nutrisi yang seimbang untuk hewan peliharaan Anda. Dengan dokter hewan kami, Anda dapat memastikan bahwa hewan peliharaan Anda dirawat bahkan setelah jam operasional klinik.</h2>
+		<div>
+			<a href="<?php echo base_url("Login/index") ?>" class="btn-get-started scrollto">Reservasi</a>
 		</div>
-				
-				
-				<div class="clearfix"> </div>
-			</div>
 		</div>
-	</div>
-	<div class="about" id="about">
-		<div class="container">
-			<div class="about-top-grids">
-				<div class="col-md-7 about-top-grid">
-					<h2>Penitipan <span class="fa fa-paw" aria-hidden="true"></span></h2>
-					
-					<div class="about-para"><br>
-						<p style="text-indent:45px">Kami menyediakan ruang yang difasilitasi dengan peralatan modern dan higienis yang baik untuk penyakit infeksius maupun non infeksius yang dipantau oleh kamera pengintai. Kami juga memberikan nutrisi yang seimbang untuk hewan peliharaan Anda. Dengan dokter hewan kami, Anda dapat memastikan bahwa hewan peliharaan Anda dirawat bahkan setelah jam operasional klinik.</p>
-						
-					</div>
-					
-					
-				</div>
-				<div class="col-md-5 pope banner-agileits-btm" id="video">
-					<div class="button">
-
-						<a href="#small-dialog1" class="play-icon popup-with-zoom-anim"><span class="fa fa-play-circle" aria-hidden="true"></span></a>
-					</div>
-					<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
-						<div class="agileits_modal_body">
-							<iframe src="https://player.vimeo.com/video/72859932?"></iframe>
-
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+		<div class="col-lg-6 order-1 order-lg-2 hero-img">
+		<!-- <img src="<?php echo base_url() ?>assets2/img/hero-img.svg" class="img-fluid animated" alt=""> -->
 		</div>
 	</div>
-	<!-- modal -->
-	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title">Register</h4>
-					</div>
-					<div class="modal-body">
-						<div class="out-info">
-							<div class="letter-w3ls">
-
-								<form action="#" method="post">
-									<div class="main">
-										<div class="form-left-to-w3l">
-
-											<input type="text" name="name" placeholder="Name" required="">
-											<div class="clear"></div>
-										</div>
-										<div class="form-right-to-w3ls">
-
-											<input type="text" name="last name" placeholder="Last Name" required="">
-											<div class="clear"></div>
-										</div>
-
-									</div>
-
-									<div class="main">
-										<div class="form-left-to-w3l">
-
-											<input type="email" name="email" placeholder="Email" required="">
-											<div class="clear"></div>
-										</div>
-										<div class="form-right-to-w3ls">
-
-											<input type="text" name="phone number" placeholder="Phone Number" required="">
-											<div class="clear"></div>
-										</div>
-									</div>
-									<div class="main">
-
-										<div class="form-left-to-w3l">
-											<select class="form-control">
-					<option value="">Adopt Pet</option>
-						<option>Male</option>
-						<option>Female</option>
-					</select>
-										</div>
-										<div class="form-right-to-w3ls">
-											<select class="form-control">
-					<option value="">Breed</option>
-						<option>Bull Dog</option>
-						<option>German Dog</option>
-						<option>Poodle Dog</option>
-						<option>Husky Dog</option>
-					</select>
-										</div>
-									</div>
+	
+	</div>
+</section><!-- End Hero -->	
 
 
-									<div class="form-add-to-w3ls add">
+<div class="clearfix"> </div>
+<section id="hero" class="d-flex align-items-center">
 
-										<input type="text" name="address" placeholder="Street Address" required="">
-										<div class="clear"></div>
-									</div>
-
-
-									<div class="main">
-										<div class="form-left-to-w3l">
-
-											<input type="text" name="city" placeholder="City" required="">
-											<div class="clear"></div>
-										</div>
-										<div class="form-right-to-w3ls">
-											<input type="text" name="state" placeholder="State" required="">
-											<div class="clear"></div>
-										</div>
-
-									</div>
-									<div class="main">
-										<div class="form-left-to-w3l">
-											<input type="text" name="Pin code" placeholder="Pin code" required="">
-											<div class="clear"></div>
-										</div>
-										<div class="form-right-to-w3ls">
-											<select class="form-control buttom">
-												<option value="">
-												Select Country</option>
-													<option value="category2">Oman</option>
-													<option value="category1">Australia</option>
-													<option value="category3">America</option>
-													<option value="category3">London</option>
-													<option value="category3">Goa</option>
-													<option value="category3">Canada</option>
-													<option value="category3">Srilanka</option>
-												</select>
-
-											<div class="clear"></div>
-										</div>
-
-									</div>
-
-									<div class="form-control-w3l">
-										<textarea name="Message" placeholder="Why You Want Adopt Pet...?" required=""></textarea>
-									</div>
-									<div class="btnn">
-										<button type="submit">Submit</button><br>
-									</div>
-
-								</form>
-							</div>
-						</div>
-						<!--//register form-->
-
-					</div>
-				</div>
-			</div>
+	<div class="container">
+	<div class="row gy-4">
+		<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+		<h1>Grooming<span class="fa fa-paw" aria-hidden="true"></span></h1>
+		<h2>Anda tidak perlu lagi repot dan takut untuk melakukan pet grooming atau perawatan kulit dan bulu hewan kesayangan anda. Kami Klinik Sekar Satwa memberikan pelayanan Pet Grooming untuk Mandi Sehat dan mandi Perawatan ( baik untuk mencegah ada Kutu pada bulu ataupun Jamuran pada Kulit ) pada hewan kesayangan anda.</h2>
+		<div>
+			<a href="<?php echo base_url("Login/index") ?>" class="btn-get-started scrollto">Reservasi</a>
+		</div>
+		</div>
+		<div class="col-lg-6 order-1 order-lg-2 hero-img">
+		<!-- <img src="<?php echo base_url() ?>assets2/img/hero-img.svg" class="img-fluid animated" alt=""> -->
 		</div>
 	</div>
-	<!-- //modal -->
+	
+	</div>
+
+</section><!-- End Hero -->	
+<section id="hero" class="d-flex align-items-center">
+
+	<div class="container">
+	<div class="row gy-4">
+		<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+		<h1>Pemeriksaan<span class="fa fa-paw" aria-hidden="true"></span></h1>
+		<h2>Pelayanan Pemeriksaan Kesehatan hewan kesayangan anda untuk mendapatkan diagnosa dari kesehatan hewan.</h2>
+		<div>
+			<a href="<?php echo base_url("Login/index") ?>" class="btn-get-started scrollto">Reservasi</a>
+		</div>
+		</div>
+		<div class="col-lg-6 order-1 order-lg-2 hero-img">
+		<!-- <img src="<?php echo base_url() ?>assets2/img/hero-img.svg" class="img-fluid animated" alt=""> -->
+		</div>
+	</div>
+	
+	</div>
+
+</section><!-- End Hero -->	
+<section id="hero" class="d-flex align-items-center">
+
+	<div class="container">
+	<div class="row gy-4">
+		<div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+		<h1>Vaksinasi<span class="fa fa-paw" aria-hidden="true"></span></h1>
+		<h2>Pencegahan dengan vaksinasi adalah terapi yang paling efektif untuk penyakit virus. Berikan perlindungan terbaik untuk hewan peliharaan kesayangan anda dengan mengikuti jadwal vaksinasi yang tepat. Kami melayani program vaksinasi untuk anjing dan kucing.</h2>
+		<div>
+			<a href="<?php echo base_url("Login/index") ?>" class="btn-get-started scrollto">Reservasi</a>
+		</div>
+		</div>
+		<div class="col-lg-6 order-1 order-lg-2 hero-img">
+		<!-- <img src="<?php echo base_url() ?>assets2/img/hero-img.svg" class="img-fluid animated" alt=""> -->
+		</div>
+	</div>
+	
+	</div>
+
+</section>
 
 	<!--js working-->
 	<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>

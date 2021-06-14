@@ -42,9 +42,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url('Admin/index'); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Beranda</span></a>
             </li>
 
            
@@ -53,19 +53,19 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <!-- <div class="sidebar-heading">
                 Addons
-            </div>
+            </div> -->
 
             <!-- Nav Item - Pages Collapse Menu -->
             
             
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Petugas/index'); ?>">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('User/index'); ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Petugas</span></a>
-            </li>
+            </li> -->
 
 
             <!-- Divider -->

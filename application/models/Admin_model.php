@@ -24,6 +24,14 @@ class Admin_model extends CI_Model {
 	{
 		$this->db->insert($t, $object);
 	}
+	public function del($t, $w)
+	{
+		$this->db->delete($t, $w);
+	}
+	public function updData($t, $object, $w)
+	{
+		$this->db->update($t, $object, $w);
+	}
 
 }
 

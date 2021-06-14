@@ -20,9 +20,10 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                    
                                             <th>NO</th>  
                                             <th>AKSI</th>                                           
-                                            <th>TANGGAL PENITIPAN</th>                         
+                                            <th>TANGGAL PENGAJUAN</th>                    
                                             <th>TANGGAL PENGAJUAN</th>
                                             <th>NAMA </th>
                                             <th>ALAMAT </th>
@@ -36,32 +37,60 @@
                                     <img src="" alt="">
 							<?php
                            
-							$no = 0;
-							foreach ($data_penitipan as $pm) {
-								$no++;
-                                if ($data_penitipan->status == "mengajukan") {
-									$sts = "dikonfirmasi";
-                                }
-                                
-								echo '<tr>
-										<td>' . $no . '</td>
-                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                        <span class="text">Konfirmasi</span>
-                                    </a> 
-                                        <td>' .  $pm->tgl_titip .  '</td>		                                                                              <td>' .  $pm->tgl_titip .  '</td>		                                        
-                                        <td>' .  $pm->tgl_dambil .  '</td>		
-										<td>' . $pm->nama . '</td>
-                                        <td>' . $pm->alamat . '</td>
-                                        <td>' . $pm->no_telp . '</td>
-                                        <td>' . $pm->hewan . '</td>
-										
-									  </tr>';
-                                
-							}
-							?>
+							
+                           $no = 0;
+                           foreach ($data_penitipan as $pm) {
+                               $no++;
+                               if ($pm->status == "mengajukan") {
+                                   $sts = "konfirmasi";
+                               
+                               echo '<tr>
+                                       <td>' . $no . '</td>
+                                       <td><a href="'. base_url('Petugas/upd_penitipan/'). $sts . '/'  .$pm->id_hotel .'" class="btn btn-success btn-icon-split">
+                                       <span class="icon text-white-50">
+                                           <i class="fas fa-check"></i>
+                                           <a href="'.  base_url('Reservasi/print/') .$pm->hotel . '" class="btn btn-success btn-icon-split">
+                                           
+                                           <span class="icon text-white-50">
+                                               <i class="fas fa-print"></i>
+                                                
+                                       </td>
+                                       </span>
+                                      
+                                   </a> 
+                                       <td>' .  $pm->tgl_titip .  '</td>
+                                       <td>' .  $pm->tgl_diambil .  '</td>		
+                                       <td>' . $pm->nama . '</td>
+                                       <td>' . $pm->hewan . '</td>
+                                      
+                                       
+                                     </tr>';
+                               
+                               }else if ($pm->status == "Dikonfirmasi") {
+                                   
+                                    echo '<tr>
+                                    <td>' . $no . '</td>
+                                       <td>
+                                       <span class="icon text-white-50">
+                                           <i class="fas fa-check"></i>
+                                           <a href="'.  base_url('Reservasi/print/') .$pm->id_hotel . '" class="btn btn-success btn-icon-split">
+                                           
+                                           <span class="icon text-white-50">
+                                               <i class="fas fa-print"></i>
+                                                
+                                       </td>
+                                       </span>
+                                       <td>' .  $pm->tgl_titip .  '</td>
+                                       <td>' .  $pm->tgl_diambil .  '</td>		
+                                       <td>' . $pm->nama . '</td>
+                                       <td>' . $pm->hewan . '</td>
+                                      
+                                       
+                               </tr>';
+                                       
+                                   }
+                               }
+                           ?>
                                     </tbody>
                                 </table>
                                 
@@ -105,15 +134,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

@@ -58,18 +58,20 @@ class Login extends CI_Controller {
 			$this->session->set_flashdata('input', $this->input->post());
 			redirect('login/register');
 		} else {
+			$kalimat = substr($this->input->post('no_telp'), 1);
+			$hp = "62" . $kalimat;
 			$nama = $this->input->post('nama');
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$alamat = $this->input->post('alamat');
-			$no_telp = $this->input->post('no_telp');
+			
 			$pass = password_hash($password, PASSWORD_DEFAULT);
 			$data = [
 				'nama' => $nama,
 				'username' => $username,
 				'password' => $pass,
 				'alamat' => $alamat,
-				'no_telp' => $no_telp,
+				'no_telp' => $hp,
 				'id_level' => 4,
 			];
 			$insert = $this->lm->register("wali_pasien", $data);

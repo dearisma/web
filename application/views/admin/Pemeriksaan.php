@@ -25,8 +25,7 @@
                                             <th>TANGGAL PENGAJUAN</th>
                                             <th>KELUHAN</th>
                                             <th>NAMA </th>
-                                            <th>ALAMAT </th>
-                                            <th>NO HP </th>
+                                          
                                             <th>HEWAN </th>
                                             
                                             
@@ -36,30 +35,56 @@
                                     <img src="" alt="">
 							<?php
                            
-							$no = 0;
-							foreach ($data_periksa as $pm) {
-								$no++;
-                                if ($data_periksa->status == "mengajukan") {
-									$sts = "dikonfirmasi";
-                                }
-                                
-								echo '<tr>
-										<td>' . $no . '</td>
-                                        <td><a href="'. base_url('Reservasi/upd_grooming/') . $sts . '/' .$data_grooming->id_grooming . '" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                        <span class="text">Konfirmasi</span>
-                                    </a> 
-                                        <td>' .  $pm->tgl_periksa .  '</td>		
-										<td>' .  $pm->keluhan .  '</td>	
-                                        <td>' . $pm->nama . '</td>
-                                        <td>' . $pm->alamat . '</td>
-                                        <td>' . $pm->no_telp . '</td>
-                                        <td>' . $pm->hewan . '</td>
-										
-									  </tr>';
-                                
+                           $no = 0;
+                           foreach ($data_periksa as $pm) {
+                               $no++;
+                               if ($pm->status == "mengajukan") {
+                                   $sts = "konfirmasi";
+                               
+                               echo '<tr>
+                                       <td>' . $no . '</td>
+                                       <td><a href="'. base_url('Petugas/upd_periksa/'). $sts . '/'  .$pm->id_periksa .'" class="btn btn-success btn-icon-split">
+                                       <span class="icon text-white-50">
+                                           <i class="fas fa-check"></i>
+                                           <a href="'.  base_url('Reservasi/print/') .$pm->print . '" class="btn btn-success btn-icon-split">
+                                           
+                                           <span class="icon text-white-50">
+                                               <i class="fas fa-print"></i>
+                                                
+                                       </td>
+                                       </span>
+                                      
+                                   </a> 
+                                       <td>' .  $pm->tgl_periksa .  '</td>	
+                                       <td>' . $pm->nama . '</td>
+                                       <td>' . $pm->hewan . '</td>
+                                       <td>' . $pm->keluhan . '</td>
+                                      
+                                       
+                                     </tr>';
+                               
+                               }else if ($pm->status == "Dikonfirmasi") {
+                                   
+                                    echo '<tr>
+                                    <td>' . $no . '</td>
+                                       <td>
+                                       <span class="icon text-white-50">
+                                           <i class="fas fa-check"></i>
+                                           <a href="'.  base_url('Reservasi/print/') .$pm->id_periksa . '" class="btn btn-success btn-icon-split">
+                                           
+                                           <span class="icon text-white-50">
+                                               <i class="fas fa-print"></i>
+                                                
+                                       </td>
+                                       </span>
+                                       <td>' .  $pm->tgl_periksa .  '</td>	
+                                       <td>' . $pm->nama . '</td>
+                                       <td>' . $pm->hewan . '</td>
+                                       <td>' . $pm->keluhan . '</td>
+                                      
+                                       
+                               </tr>';
+                               }
 							}
 							?>
                                     </tbody>
@@ -105,15 +130,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

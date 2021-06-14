@@ -6,10 +6,10 @@
 						<div class="slider-img">
 							<div class="container">
 								<div class="slider-info">
-									<h4> <span class="home-banner">O</span>ur <span class="home-banner">A</span>wesome <span class="home-banner">T</span>eam
+									<h4> <span class="home-banner">T</span>im <span class="home-banner">K</span>ami<span class="home-banner"></span>
 										<span
 										    class="fa fa-paw paw-banner" aria-hidden="true"></span><span class="fa fa-paw paw-banner" aria-hidden="true"></span></h4>
-									<p>We have a profesional team</p>
+									<p>Kami memiliki tim yang profesional</p>
 									<div class="outs_more-buttn">
 									</div>
 								</div>
@@ -130,74 +130,61 @@
 	<!-- //modal -->
 	
 	<!--About-->
-	<div class="about" id="about">
-		<div class="container"><?php
-				foreach ($data_petugas as $pm) {
-					echo'
-			<div class="about-top-grids">
-				<div class="col-md-7 about-top-grid">
-				
-				<br><br><br><h3>'. $pm->nama . '</h3>
-					<br>
-					<div class="about-para">
-					<b><p style="text-indent:45px">'. $pm->jabatan . '</p></b>
-						<p>Alumni : '. $pm->alumni . '</p>
-						<p>Seminar and course : </p>
-						<div class="arrow">
-						<ul>
-							<li><span class="fa fa-paw dog-arrow" aria-hidden="true"></span>
-								<p>'. $pm->alumni . '</p>
-							</li>
-						</ul>
-					</div>
-					</div>
-					
-				</div>
-				<br>
-					<img style="width: 300px; height:400px;"  src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '" class="rounded-circle"">
-					</div>
-					
-					';
-				}?>
-				
-			</div>
-		</div>
-	</div> 
-	
-	<div class="about" id="about">
-		<div class="container">
-			<div class="about-top-grids">
-				<div class="col-md-7 about-top-grid">
-					<h2>Hardono Ananto Hadi</h2>
-					
-					<div class="about-para"><br>
-						<b><p style="text-indent:45px">Head Doctor/Medical</p></b>
-						<p>Tanggal Lahir : Blitar, 01 Januari 1983 </p>
-						<p>Alumni : Universitas Airlangga</p>
-						<p>Seminar and Course : </p>
-					</div>
-					<div class="arrow">
-						<ul>
-							<li><span class="fa fa-paw dog-arrow" aria-hidden="true"></span>
-								<p>VRVC (VPAT Regional Veterinary Congress 2009 , 2010, 2011</p>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-5 " >
-				<img src='<?php echo base_url() ?>assets/images/dokter.png' style="width:300px;height:400px">
-					
-			</div>
-		</div>
-	</div>
-	
+	<!-- ======= Team Section ======= -->
+	<link href="<?php echo base_url() ?>assets2/css/style.css" rel="stylesheet">
+    <section id="team" class="team">
+      <div class="container">
 
+        <div class="section-title" data-aos="fade-up">
+          <h2>Tim</h2>
+          <p>Tim Kami Selalu Siap Membantu</p>
+        </div>
+
+        <div class="row">
+		<?php
+			foreach ($data_petugas as $pm) {
+					echo'
+          
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member">
+			<img src="' . base_url('assets/uploads/') . $pm->foto . '" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+				<h4>'. $pm->nama_petugas . '</h4>
+                  <span>'. $pm->jabatan .'</span>
+				  <span>'. $pm->alumni .'</span>
+                </div>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  ';
+		}?>
+        
+
+      </div>
+    </section><!-- End Team Section -->
+	<script src="<?php echo base_url() ?>assets2/vendor/aos/aos.js"></script>
+  <script src="<?php echo base_url() ?>assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?php echo base_url() ?>assets2/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="<?php echo base_url() ?>assets2/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="<?php echo base_url() ?>assets2/vendor/php-email-form/validate.js"></script>
+  <script src="<?php echo base_url() ?>assets2/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="<?php echo base_url() ?>assets2/js/main.js"></script>
 	<!--js working-->
-	<script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
-	<script src="js/bootstrap.js"></script>
+	<script type='text/javascript' src='<?php echo base_url() ?>assets2/js/jquery-2.2.3.min.js'></script>
+	<script src="<?php echo base_url() ?>assets2/js/bootstrap.js"></script>
 	<!-- //js  working-->
 
-	<script src="js/responsiveslides.min.js"></script>
+	<script src="<?php echo base_url() ?>assets2/js/responsiveslides.min.js"></script>
 
 	<script>
 		// You can also use "$(window).load(function() {"

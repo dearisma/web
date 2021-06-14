@@ -38,12 +38,20 @@
                                         <input type="text" id="keterangan" name="keterangan" class="form-control" required><br>
                                         <label for="tanggal">Tanggal Masuk</label>
                                         <input type="date" id="tanggal" name="tanggal" class="form-control" required><br>
-                                        <label for="id_wali">Wali</label>
+                                        <label for="id_wali">Nama Wali</label>
                                         <select name="id_wali" id="id_wali" class="form-control" required>
                                             <?php foreach ($wali as $w) : ?>
-                                                <option value="<?= $w->id_wali ?>"><?= $w->nama ?></option>
+                                                <option value="<?= $w->id_wali ?>"><?= $w->nama?></option>
                                             <?php endforeach; ?>
                                         </select><br>
+
+                                        <label for="id_petugas">Dokter</label>
+                                        <select name="id_petugas" id="id_petugas" class="form-control" required>
+                                            <?php foreach ($petugas as $p) : ?>
+                                                <option value="<?= $p->id_petugas ?>"><?= $p->nama_petugas?></option>
+                                            <?php endforeach; ?>
+                                        </select><br>
+                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -75,6 +83,8 @@
                                             <th>KETERANGAN </th>
                                             <th>TANGGAL</th>
                                             <th>WALI </th>
+                                            <th>DOKTER</th>
+                                            
                                             
                                             
                                         </tr>
@@ -98,6 +108,8 @@
                                         <td>' . $pm->keterangan . '</td>
                                         <td>' . $pm->tanggal . '</td>
                                         <td>' . $pm->nama . '</td>
+                                        <td>' . $pm->nama_petugas   . '</td>
+                                       
 										
 									  </tr>';
                                 
@@ -146,15 +158,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Yakin Keluar?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Keluar</a>
                 </div>
             </div>
         </div>

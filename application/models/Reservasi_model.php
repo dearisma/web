@@ -9,7 +9,17 @@ class Reservasi_model extends CI_Model {
 	{
 		return $this->db->get($t);
 	}
-
+	public function getData_print($t)
+	{
+		return $this->db->get($t);
+	}
+	public function getDt($t, $w)
+	{
+		$this->db->where($w);
+		
+		return $this->db->get($t);
+	}
+	
 	public function register($table, $data)
 	{
     return $this->db->insert($table, $data);
@@ -30,11 +40,22 @@ class Reservasi_model extends CI_Model {
 		return $this->db->get($t);
 	}
 	
+	public function getDataId_Reservasi($t, $w)
+	{
+	$this->db->join('wali_pasien', 'wali_pasien.id_wali = ' . $t . '.id_wali', 	'left');
+		$this->db->where($w);
+		return $this->db->get($t);
+	}
 	public function getDataId_grooming($t, $w)
 	{
-		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 	'left');
-		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 	'left');
-		$this->db->where($w,$y);
+		$this->db->join('hewan', 'hewan.id_hewan = ' . $t . '.id_hewan', 'left');
+		$this->db->join('wali_pasien', 'wali.id_wali = ' . $t . '.id_wali', 'left');
+		$this->db->join('kategori', 'kategori.id_kategori = ' . $t . '.id_kategori', 	'left');
+		$this->db->where($w);
+		return $this->db->get($t);
+	}
+	public function getData_Reservasi($t)
+	{
 		return $this->db->get($t);
 	}
 
@@ -54,6 +75,19 @@ class Reservasi_model extends CI_Model {
 		return $this->db->get($t);
 	}
 	
+	public function getDataMaks($tgl) {
+		
+		return $this->db->get_where('grooming', ['tgl_grooming' => $tgl])->num_rows();
+	}
+	function edit_data($where,$table){                              
+		return $this->db->get_where($table,$where);
+
+	}
+	
+	public function updData($t, $object, $w)
+	{
+		$this->db->update($t, $object, $w);
+	}
 
 }
 

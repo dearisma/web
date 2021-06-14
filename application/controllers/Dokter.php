@@ -28,6 +28,7 @@ class Dokter extends CI_Controller {
 
 	public function index()
 	{
+		$data['log'] = $this->session->userdata('data_session');
 		if ($this->session->userdata('data_session') == NULL) {
 			redirect('Welcome', 'refresh');
 		}else{
@@ -37,29 +38,33 @@ class Dokter extends CI_Controller {
 			$data['rekam_medis'] = $this->pm->search_Reservasi($cari)->result();
 		}else{
 			$w = array ('rekam_medis.id_wali');
-			$data['rekam_medis'] = $this->pm->getDataId_Reservasi('rekam_medis', $w)->result();
+			$data['rekam_medis'] = $this->pm->getDataId_Rm('rekam_medis', $w)->result();
 		}	
+
 		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+		$data['petugas'] = $this->pm->getData_Reservasi('petugas')->result();
+
 			$this->load->view('template/header_dokter', $data);
-			$this->load->view('template/topbar');
+			$this->load->view('template/topbar_dokter');
 			$this->load->view('Admin/Rekam_medis', $data);
 		}
 	}
-	public function rekam_medis()
-	{
-		error_reporting(0);
-		$cari = $_GET['keyword'];
-		if ($cari != null) {
-			$data['rekam_medis'] = $this->pm->search_Reservasi($cari)->result();
-		}else{
-			$w = array ('rekam_medis.id_wali');
-			$data['rekam_medis'] = $this->pm->getDataId_Reservasi('rekam_medis', $w)->result();
-		}	
-		$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+	// public function rekam_medis()
+	// {
+	// 	error_reporting(0);
+	// 	$cari = $_GET['keyword'];
+	// 	if ($cari != null) {
+	// 		$data['rekam_medis'] = $this->pm->search_Reservasi($cari)->result();
+	// 	}else{
+	// 		$w = array ('rekam_medis.id_wali');
+	// 		$data['rekam_medis'] = $this->pm->getDataId_Rm('rekam_medis', $w)->result();
+	// 	}	
+	// 	$data['wali'] = $this->pm->getData_Reservasi('wali_pasien')->result();
+	// 	$data['petugas'] = $this->pm->getData_Reservasi('petugas')->result();
 		
-			$this->load->view('template/topbar');
-			$this->load->view('Admin/Rekam_medis', $data);
-	}
+	// 		$this->load->view('template/topbar');
+	// 		$this->load->view('Admin/Rekam_medis', $data);
+	// }
 	
 	public function ins_rm()
 	{
@@ -71,7 +76,8 @@ class Dokter extends CI_Controller {
 			'terapi' => $this->input->post('terapi'),
 			'keterangan' => $this->input->post('keterangan'),
 			'tanggal' => date('Y-m-d'), 
-			'id_wali' => $this->input->post('id_wali'),
+			'id_wali' => $this->input->post('id_wali'),	
+			'id_petugas' => $this->input->post('id_petugas'),
 		);
 
 		$this->pm->ins('rekam_medis', $ins);
@@ -80,6 +86,42 @@ class Dokter extends CI_Controller {
 
 		redirect('Dokter', 'refresh');
 	}
+	public function forum()
+	{
+		
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['form'] = $this->pm->search_Reservasi($cari)->result();
+			
+		}
+		$data['form'] = $this->pm->getData_Reservasi('forum')->result();
+		// die (var_dump ($data));
+		
+		$this->load->view('template/header_dokter', $data);
+		$this->load->view('template/topbar_dokter', $data);
+		$this->load->view('Admin/konsultasi');
+	}
+	
+	public function ans_form()
+	{
+		$w = array('id_forum' => $this->uri->segment(3));
+		{
+			$ins = array(
+				'nama' => $this->input->post('nama'),
+				'email' => $this->input->post('email'),
+				'pesan' => $this->input->post('pesan'),
+				'status' => 'dikonfirmasi',		
+				'jawab' =>  $this->input->post('jawab'),
+			);
+		}	
+		$this->pm->updData('forum', $ins, $w);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate!');
+		
+		redirect('Dokter/forum', 'refresh');
+	}
+	
+	
 	
 
 }
