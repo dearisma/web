@@ -27,12 +27,12 @@
 			<th>HEWAN</th>
 		</tr>
 		<?php $no = 1;
-		foreach ($penitipan as $dt) : ?>
+		foreach ($data_penitipan as $dt) : ?>
 			<tr>
-			<td><?= $no ?></td>
+			<td><?= $dt->id_hotel ?></td>
 			<td><?php $myDateTime = DateTime::createFromFormat('Y-m-d', $dt->tgl_titip); $a = $myDateTime->format('d-m-Y'); echo $a ?></td>
 			<td><?php $myDateTime = DateTime::createFromFormat('Y-m-d', $dt->tgl_diambil); $a = $myDateTime->format('d-m-Y'); echo $a ?></td>										
-			<td><?= $dt->id_wali ?></td>
+			<td><?= $dt->nama ?></td>
 			<td><?= $dt->hewan ?></td>
 									
 			</tr>

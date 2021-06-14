@@ -11,11 +11,14 @@
                 <!-- Begin Page Content -->
                          
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="col-md">
+                    <div class="card shadow mb-1">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Penitipan Sekar Satwa</h6>
                         </div>
+                       
                         <div class="card-body">
+                        
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -73,10 +76,11 @@
                                        <td>
                                        <span class="icon text-white-50">
                                            <i class="fas fa-check"></i>
-                                           <a href="'.  base_url('Reservasi/print/') .$pm->id_hotel . '" class="btn btn-success btn-icon-split">
+                                           <a href="'.  base_url('Petugas/print_penitipan/') .$pm->id_hotel. '" class="btn btn-success btn-icon-split">
                                            
                                            <span class="icon text-white-50">
                                                <i class="fas fa-print"></i>
+                                               
                                                 
                                        </td>
                                        </span>

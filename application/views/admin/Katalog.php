@@ -54,10 +54,10 @@
                                 </div>
                             <?php endif ?>
                             
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                   <!-- DataTales Example -->
+                   <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Katalog</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Katalog Klinik Sekar Satwa</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -68,8 +68,8 @@
                                             <th>BARANG</th>
                                             <th>DESKRIPSI</th>
                                             <th>FOTO</th>
-                                            <th>AKSI</th>
-                                        
+                                          
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -83,22 +83,52 @@
 										<td>' . $pm->nama . '</td>
 										<td>' . $pm->deskripsi . '</td>
 										<td> <img style="width: 200px; height:200px;" src="' . base_url('assets/uploads/') . $pm->foto . '" alt="' . $pm->nama . '"></td>	
-                                       
-                           
-                                       </tr>';
-                                        }
-                                        ?>
+										
+                                        <td>
+										
+                                        <a href="" class="btn btn-warning" data-toggle="modal" data-target="#update' . $pm->id_katalog . '"  data-popup="tooltip" data-placement="top" >Update</a> 
+                                        <a href="' . base_url('Petugas/hapus/' . $pm->id_katalog) . '" class="btn btn-danger">Delete</a></td>
+                                        
+                                        </td>
+                                        
+                                    </tr>';
+							}
+							?>
                                     </tbody>
-                                </table>    
-                            </div> 
-                            <?php if ($this->session->flashdata('pesan') != null) : ?>
-                            <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button><?= $this->session->flashdata('pesan'); ?>
+                                </table>
+                                <?php $no = 0;
+			                    foreach ($katalog as $pm) : $no++; ?>
+                                <div class="modal fade " id="update<?= $pm->id_katalog; ?>">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                
+                                            </div>
+                                            <form action="<?= base_url('Petugas/update/') . $pm->id_katalog ?>" method="post" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <label for="nama">Barang </label>
+                                                    <input type="text" id="nama" name="nama" class="form-control"value="<?= $pm->nama ?>" required><br>
+                                                    <label for="nama">Deskripsi </label>
+                                                    <input type="text" id="deskripsi" name="deskripsi" class="form-control"value="<?= $pm->deskripsi  ?>" required><br>
+                                                    <label for="nama">Foto </label>
+                                                    <input type="file" id="foto" name="foto" class="form-control" value="<?= $pm->foto ?>" required>><br>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    <input type="submit" name="simpan" value="Simpan" class="btn btn-success">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                        
+                                </div>
+                                <?php endforeach; ?>
                             </div>
-			            <?php endif ?>
+                            
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -107,13 +137,13 @@
             
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+            <!-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
             <!-- End of Footer -->
 
         </div>

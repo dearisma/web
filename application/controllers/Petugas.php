@@ -272,6 +272,70 @@ class Petugas extends CI_Controller {
 		$mpdf->Output('Cetak Kartu.pdf', 'D');
 
 	}
+	public function print_periksa(){
+		$w = array ('id_periksa' => $this->uri->segment(3));
+			
+			$data['data_periksa'] = $this->pm->getDataId_Reservasi('periksa', $w)->result();
+		// $w = array('id_grooming' => $this->uri->segment(4)); 
+	
+		// $data = $this->pm->getDataId_Reservasi('grooming', $w)->row();
+		$mpdf = new \Mpdf\Mpdf();
+		$html = $this->load->view('Reservasi/print_periksa', $data, TRUE);
+
+		$mpdf->WriteHTML($html);
+		// $mpdf->Output();
+		$mpdf->Output('Cetak Kartu.pdf', 'D');
+
+	}
+	public function print_penitipan(){
+		$w = array ('id_hotel' => $this->uri->segment(3));
+			
+			$data['data_penitipan'] = $this->pm->getDataId_Reservasi('hotel', $w)->result();
+		// $w = array('id_grooming' => $this->uri->segment(4)); 
+	
+		// $data = $this->pm->getDataId_Reservasi('grooming', $w)->row();
+		$mpdf = new \Mpdf\Mpdf();
+		$html = $this->load->view('Reservasi/print_penitipan', $data, TRUE);
+
+		$mpdf->WriteHTML($html);
+		// $mpdf->Output();
+		$mpdf->Output('Cetak Kartu.pdf', 'D');
+
+	}
 		
+	public function hapus()
+	{
+		$w = array ('id_katalog' => $this->uri->segment(3));
+		$this->pm->del('katalog',$w);
+		
+		$this->session->set_flashdata('pesan', 'Data Berhasil Dihapus!');
+		redirect('Petugas/Katalog','refresh');
+	}
+
+	public function update()
+	{
+		$w = array('id_katalog' => $this->uri->segment(3));
+		$config['upload_path'] = './assets/uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('foto')){
+			$ins = array(
+				'nama' => $this->input->post('nama'),
+				'deskripsi' => $this->input->post('deskripsi'),
+			);			
+		}
+		else{
+			$ins = array(
+				'nama' => $this->input->post('nama'),
+				'deskripsi' => $this->input->post('deskripsi'),
+				'foto' => $this->upload->data('file_name'),
+			);
+		}	
+		$this->pm->updData('katalog', $ins, $w);
+		$this->session->set_flashdata('pesan', 'Data Berhasil Diupdate!');
+		redirect('Petugas/Katalog','refresh');
+	}
 
 }

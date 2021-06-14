@@ -58,6 +58,10 @@ class Petugas_model extends CI_Model {
 	{
 		$this->db->update($t, $object, $w);
 	}
+	public function del($t, $w)
+	{
+		$this->db->delete($t, $w);
+	}
 
 }
 

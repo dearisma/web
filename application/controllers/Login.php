@@ -73,6 +73,7 @@ class Login extends CI_Controller {
 				'alamat' => $alamat,
 				'no_telp' => $hp,
 				'id_level' => 4,
+				'vaksin' => 'mengajukan',
 			];
 			$insert = $this->lm->register("wali_pasien", $data);
 			if($insert){

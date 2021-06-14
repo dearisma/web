@@ -46,7 +46,7 @@
                                        <td><a href="'. base_url('Petugas/upd_periksa/'). $sts . '/'  .$pm->id_periksa .'" class="btn btn-success btn-icon-split">
                                        <span class="icon text-white-50">
                                            <i class="fas fa-check"></i>
-                                           <a href="'.  base_url('Reservasi/print/') .$pm->print . '" class="btn btn-success btn-icon-split">
+                                           <a href="'.  base_url('Reservasi/print_periksa/') .$pm->id_periksa . '" class="btn btn-success btn-icon-split">
                                            
                                            <span class="icon text-white-50">
                                                <i class="fas fa-print"></i>
@@ -70,7 +70,7 @@
                                        <td>
                                        <span class="icon text-white-50">
                                            <i class="fas fa-check"></i>
-                                           <a href="'.  base_url('Reservasi/print/') .$pm->id_periksa . '" class="btn btn-success btn-icon-split">
+                                           <a href="'.  base_url('Petugas/print_periksa/') .$pm->id_periksa . '" class="btn btn-success btn-icon-split">
                                            
                                            <span class="icon text-white-50">
                                                <i class="fas fa-print"></i>
